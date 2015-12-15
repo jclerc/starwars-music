@@ -37,6 +37,13 @@
             border: 2px solid white;
             border-radius: 30px;
             color: white;
+            transition: all .3s;
+
+            &:hover {
+                color: black;
+                background-color: white;
+                cursor: pointer;
+            }
         }
     }
 }
