@@ -1,0 +1,43 @@
+/**
+ * Navigation between pages
+ *
+ */
+
+.visible {
+    transform: translateY(0);
+}
+
+.enter-up,
+.enter-down,
+.exit-up,
+.exit-down {
+    animation-duration: 1s;
+}
+
+.enter-up {
+    animation-name: enter-up;
+}
+
+.enter-down {
+    animation-name: enter-down;
+}
+
+.exit-up {
+    animation-name: enter-up;
+    animation-direction: reverse;
+}
+
+.exit-down {
+    animation-name: enter-down;
+    animation-direction: reverse;
+}
+
+@keyframes enter-up {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(0%); }
+}
+
+@keyframes enter-down {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
+}

@@ -1,2 +1,2 @@
-console.log('Loaded !');
-console.log('Loaded !');
+
+console.log('Libs and App loaded !');
