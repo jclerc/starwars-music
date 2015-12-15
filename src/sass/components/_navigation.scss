@@ -5,6 +5,7 @@
 
 .visible {
     transform: translateY(0);
+    z-index: 100;
 }
 
 .enter-up,
@@ -23,13 +24,11 @@
 }
 
 .exit-up {
-    animation-name: enter-up;
-    animation-direction: reverse;
+    animation-name: exit-up;
 }
 
 .exit-down {
-    animation-name: enter-down;
-    animation-direction: reverse;
+    animation-name: exit-down;
 }
 
 @keyframes enter-up {
@@ -40,4 +39,14 @@
 @keyframes enter-down {
     0%   { transform: translateY(100%); }
     100% { transform: translateY(0%); }
+}
+
+@keyframes exit-up {
+    0%   { transform: translateY(0%); }
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes exit-down {
+    0%   { transform: translateY(0%); }
+    100% { transform: translateY(100%); }
 }
