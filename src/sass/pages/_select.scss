@@ -11,11 +11,11 @@ EPISODE SELECTION
 }
 .cards {
 
-    width: 150%;
+    width: 175%;
     height: 100%;
     color: white;
     text-align: center;
-    text-shadow: 1px 1px .3px #1B1B1B;
+    text-shadow: 0px 0px 1px #1B1B1B;
 
     .card{
         position: relative;
@@ -41,9 +41,10 @@ EPISODE SELECTION
         transform: rotate(45deg);
         border: 2px solid white;
         border-radius: 20%;
-        box-shadow: 1px 1px .3px #1B1B1B;
+        box-shadow: 0px 0px 1px #1B1B1B;
 
         p{
+            text-shadow: 0px 0px 2px #1B1B1B;
             transform:  rotate(-45deg) translate(-11px, 11px);
             font-size: 30px;
             padding: auto;
