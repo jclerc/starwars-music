@@ -31,6 +31,25 @@ EPISODE SELECTION
             left: 50%;
             transform: translate(-50%, -50%);
 
+            .number{
+                display: inline-block;
+                margin-bottom: 20px;
+                width: 60px;
+                height: 60px;
+                position: relative;
+                transform: rotate(45deg);
+                border: 2px solid white;
+                border-radius: 20%;
+                box-shadow: 1px 1px .3px #1B1B1B;
+
+                p{
+                    transform:  rotate(-45deg) translate(-11px, 11px);
+                    font-size: 30px;
+                    padding: auto;
+                    top: 50%;
+                    left: 50%;
+                }
+            }
 
         }
     }
