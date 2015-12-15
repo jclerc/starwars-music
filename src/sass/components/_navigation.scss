@@ -3,6 +3,8 @@
  *
  */
 
+.select { background: red; }
+
 .visible {
     transform: translateY(0);
     z-index: 100;
@@ -13,6 +15,9 @@
 .exit-up,
 .exit-down {
     animation-duration: 1s;
+    backface-visibility: hidden;
+    perspective: 600px;
+    transform-style: preserve-3d;
 }
 
 .enter-up {
@@ -43,10 +48,10 @@
 
 @keyframes exit-up {
     0%   { transform: translateY(0%); }
-    100% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
 @keyframes exit-down {
     0%   { transform: translateY(0%); }
-    100% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
 }
