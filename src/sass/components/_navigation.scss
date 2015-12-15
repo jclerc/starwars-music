@@ -15,9 +15,6 @@
 .exit-up,
 .exit-down {
     animation-duration: 1s;
-    backface-visibility: hidden;
-    perspective: 600px;
-    transform-style: preserve-3d;
 }
 
 .enter-up {
