@@ -1,1 +1,42 @@
 /* * */
+
+.home{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .splash{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -70%);
+
+        h2 {
+            margin-top: 30px;
+            font-size: 36px;
+            text-align: center;
+            font-family: sans-serif;
+            color: white;
+        }
+    }
+    .continue {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 160%);
+        text-align: center;
+
+        p {
+            width: 300px;
+            font-size: 19px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 310px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 30px;
+            color: white;
+        }
+    }
+}

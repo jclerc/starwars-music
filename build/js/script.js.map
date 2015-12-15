@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.js"],"names":["console","log"],"mappings":"AAAA,YAAAA,SAAQC,IAAI,YACZD,QAAQC,IAAI","file":"script.js","sourcesContent":["console.log('Loaded !');\nconsole.log('Loaded !');\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["navigation.js","main.js"],"names":["changePage","identifier","console","log"],"mappings":"AAAA,YACA,SAASA,YAAWC;ACDpB,YAAAC,SAAQC,IAAI,YACZD,QAAQC,IAAI","file":"script.js","sourcesContent":["\nfunction changePage(identifier) {\n    \n}\n\n","console.log('Loaded !');\nconsole.log('Loaded !');\n"],"sourceRoot":"/source/"}
