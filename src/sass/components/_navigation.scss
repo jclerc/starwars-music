@@ -3,8 +3,6 @@
  *
  */
 
-.select { background: red; }
-
 .visible {
     transform: translateY(0);
     z-index: -1;
@@ -14,10 +12,7 @@
 .enter-down,
 .exit-up,
 .exit-down {
-    animation-duration: 1s;
-    backface-visibility: hidden;
-    perspective: 600px;
-    transform-style: preserve-3d;
+    animation-duration: .8s;
 }
 
 .enter-up {
@@ -37,21 +32,21 @@
 }
 
 @keyframes enter-up {
-    0%   { transform: translateY(-100%); }
-    100% { transform: translateY(0%); }
+    0%   { transform: translateZ(0) translateY(-150%); }
+    100% { transform: translateZ(0) translateY(0%); }
 }
 
 @keyframes enter-down {
-    0%   { transform: translateY(100%); }
-    100% { transform: translateY(0%); }
+    0%   { transform: translateZ(0) translateY(150%); }
+    100% { transform: translateZ(0) translateY(0%); }
 }
 
 @keyframes exit-up {
-    0%   { transform: translateY(0%); }
-    100% { transform: translateY(100%); }
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(150%); }
 }
 
 @keyframes exit-down {
-    0%   { transform: translateY(0%); }
-    100% { transform: translateY(-100%); }
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(-150%); }
 }
