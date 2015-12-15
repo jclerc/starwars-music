@@ -30,7 +30,7 @@ App.goto = function (identifier, gotoUp) {
 
 var bindNavigation = function (element) {
     element.addEventListener('click', function (e) {
-        App.goto(this.getAttribute('target'), this.getAttribute('direction') === 'up');
+        App.goto(this.getAttribute('data-target'), this.getAttribute('data-direction') === 'up');
     });
 };
 
