@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.js"],"names":["console","log"],"mappings":"AAAA,YAAAA,SAAQC,IAAI,YACZD,QAAQC,IAAI","file":"script.js","sourcesContent":["console.log('Loaded !');\nconsole.log('Loaded !');\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["main.js"],"names":["console","log"],"mappings":"AAAA,YAAAA,SAAQC,IAAI,YACZD,QAAQC,IAAI","file":"script.js","sourcesContent":["console.log('Loaded !');\r\nconsole.log('Loaded !');\r\n"],"sourceRoot":"/source/"}
