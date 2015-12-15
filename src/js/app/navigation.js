@@ -34,7 +34,7 @@ var bindNavigation = function (element) {
     });
 };
 
-var elements = $$('.begin');
+var elements = $$('.navigation');
 for (var i = elements.length - 1; i >= 0; i--) {
     bindNavigation(elements[i]);
 }
