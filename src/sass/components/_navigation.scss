@@ -37,21 +37,21 @@
 }
 
 @keyframes enter-up {
-    0%   { transform: translateY(-100%); }
-    100% { transform: translateY(0%); }
+    0%   { transform: translateZ(0) translateY(-100%); }
+    100% { transform: translateZ(0) translateY(0%); }
 }
 
 @keyframes enter-down {
-    0%   { transform: translateY(100%); }
-    100% { transform: translateY(0%); }
+    0%   { transform: translateZ(0) translateY(100%); }
+    100% { transform: translateZ(0) translateY(0%); }
 }
 
 @keyframes exit-up {
-    0%   { transform: translateY(0%); }
-    100% { transform: translateY(100%); }
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(100%); }
 }
 
 @keyframes exit-down {
-    0%   { transform: translateY(0%); }
-    100% { transform: translateY(-100%); }
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(-100%); }
 }
