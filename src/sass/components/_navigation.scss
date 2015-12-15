@@ -8,11 +8,31 @@
     z-index: -2;
 }
 
+.enter-hyperspace,
+.enter-hyperspace,
 .enter-up,
 .enter-down,
 .exit-up,
 .exit-down {
     animation-duration: .8s;
+}
+
+.select {
+    transform: scale(0, 0);
+    opacity: 0;
+    transition: all 1s;
+}
+
+.enter-hyperspace {
+    transform: scale(1, 1);
+    opacity: 1;
+    transition: all 1s;
+}
+
+.exit-hyperspace {
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: all 1s;
 }
 
 .enter-up {
