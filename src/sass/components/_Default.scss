@@ -15,4 +15,11 @@ body {
     height: 100%;
     background-color: black;
     overflow: hidden;
+    display: none;
+}
+
+.visible {
+    transform: translateY(0);
+    z-index: 100;
+    display: block;
 }

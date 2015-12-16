@@ -7,11 +7,6 @@
     cursor: pointer;
 }
 
-.visible {
-    transform: translateY(0);
-    z-index: 100;
-}
-
 .enter-up,
 .enter-down,
 .exit-up,
@@ -21,6 +16,7 @@
 
 .enter-hyperspace {
     z-index: 50;
+    display: block;
     animation: enter-hyperspace 2s 1s;
 }
 
@@ -33,10 +29,12 @@
 
 .enter-up {
     animation-name: enter-up;
+    display: block;
 }
 
 .enter-down {
     animation-name: enter-down;
+    display: block;
 }
 
 .exit-up {
