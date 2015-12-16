@@ -86,6 +86,11 @@ EPISODE SELECTION
         width: 50px;
         transform: translate(-50%, -50%);
         opacity: .95;
+        transition: all .6s cubic-bezier(0,1.01,0,1);
+    }
+    &:hover .lock {
+        transform-origin: 100% 100%;
+        transform:  translate(-50%, -50%) scale(1.2); ;
     }
 }
 .card:nth-child(1){background-image: url('../img/film-1.jpg')}
