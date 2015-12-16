@@ -25,8 +25,8 @@ gulp.task('script', function(){
             presets: ['es2015']
         }))
         // create a *.js.map
-        .pipe(uglify())
         .pipe(concat('script.js'))
+        .pipe(uglify())
         .pipe(sourcemaps.write('.'))
     //destination
         .pipe(gulp.dest('build/js'))
