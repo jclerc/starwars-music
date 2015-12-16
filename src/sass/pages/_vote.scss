@@ -9,9 +9,9 @@ VOTE PAGE
 
     width: 100%;
     height: 100%;
+    background-color: black;
 
     color: white;
-    background: rgb(220, 207, 255);
     h1{
         margin-top: 40px;
 
@@ -28,20 +28,27 @@ VOTE PAGE
 
         width: 90px;
         height: 90px;
-        padding-top: 10px;
+        padding-top: 27px;
+        background-color: rgba(0, 0, 0, 0.5);
 
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(45deg);
         text-align: center;
 
         border: 4px solid white;
         border-radius: 10%;
 
         font-size: 50px;
+
+        p{
+            transform: rotate(-45deg);
+        }
+
     }
-    .left{
+    .side{
         position: absolute;
         top: 0;
-        left: 0;
+        overflow: hidden;
+
 
         width: 50%;
         height: 100%;
@@ -54,44 +61,70 @@ VOTE PAGE
             bottom: 0;
             left: 0;
 
-            background-image: url(../img/vote-left.jpg);
+            opacity: .5;
+
             background-size: cover;
+
+            transition: all .3s ease-in;
         }
 
         .content{
+            position: absolute;
+            bottom: 10%;
+            // left: 10%;
+
+            width: 80%;
             h3 {
-
+                font-size: 30px;
             }
 
-            p{
+            .button-vote{
+                width: 310px;
+                height: 50px;
+                display: inline-block;
+                border-radius: 25px;
+                margin-top: 30px;
+                border: 2px solid white;
 
-            }
-
-            button.button-vote {
-
+                transition: all .3s;
+                &:hover {
+                    color: black;
+                    background-color: white;
+                    cursor: pointer;
+                }
             }
 
         }
-
+        &:hover{
+            span.background{
+                transform: scale(1.02) translateZ(0);
+                opacity: 1;
+            }
+        }
     }
-
     .right{
+        right: 0;
         span.background{
-
+            background-image: url(../img/vote-right.jpg);
         }
-
         .content{
-            h3 {
-
+            right: 10%;
+            .button-vote{
+                float: right;
             }
-
-            p{
-
+            p, h3{
+                text-align: right;
             }
+        }
+    }
+    .left{
+        left: 0;
+        span.background{
+            background-image: url(../img/vote-left.jpg);
+        }
+        .content{
+            left: 10%;
 
-            button.button-vote {
-
-            }
         }
     }
 }
