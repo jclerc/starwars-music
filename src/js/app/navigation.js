@@ -13,6 +13,7 @@ App.goto = function (identifier, gotoUp) {
     } else if (current == next) {
         throw new Error('Moving to the same page..');
     } else {
+        App.toggleSelection(identifier === 'select');
         if (current) {
             current.classList.remove('visible');
             current.classList.add('exit-' + direction);
@@ -44,15 +45,18 @@ $('.begin').addEventListener('click', function (e) {
     }, 100);
     var home = $('.home'),
         select = $('.select');
-    home.classList.add('exit-hyperspace');
-    select.classList.add('enter-hyperspace');
-    home.addEventListener('animationend', function begin(e) { 
+    select.addEventListener('animationend', function begin(e) { 
         home.removeEventListener('animationend', begin);
         window.HYPERSPACE = false;
         home.classList.remove('visible');
+        home.classList.remove('exit-hyperspace');
         select.classList.add('visible');
+        select.classList.remove('enter-hyperspace');
         App.setLocation('select');
     });
+    home.classList.add('exit-hyperspace');
+    select.classList.add('enter-hyperspace');
+    App.toggleSelection(true);
 });
 
 window.addEventListener('hashchange', function (e) {
@@ -72,12 +76,13 @@ for (var i = elements.length - 1; i >= 0; i--) {
 }
 
 if (window.location.hash && window.location.hash.length > 2) {
-    var hash = '.' + window.location.hash.substring(2),
-        page = $(hash);
+    var hash = window.location.hash.substring(2),
+        page = $('.' + hash);
     if (page && page.classList.contains('page')) {
         var current = $('section.visible');
         if (current) current.classList.remove('visible');
         page.classList.add('visible');
+        window.HYPERSPACE = hash === 'home';
     }
 }
 
