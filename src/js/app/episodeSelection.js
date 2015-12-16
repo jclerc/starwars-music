@@ -1,17 +1,29 @@
 
-window.LAST_MOVE = 0;
+window.EPISODE_SELECTION = {
+    lastMove: 0,
+    leftOffset: window.screen.width / 2 - 100,
+    rightOffset: 0,
+    screenScale: (100 - 100 / 1.75),
+    selectCards: $('.select .cards')
+};
+
+window.EPISODE_SELECTION.percentDivisor = window.screen.width - window.EPISODE_SELECTION.rightOffset - window.EPISODE_SELECTION.leftOffset;
 
 window.TOGGLE_SELECTION_LISTENER = function(event) {
     var now = new Date().getTime();
-    // if (window.LAST_MOVE < now - 100) {
-        window.LAST_MOVE = now;
-        var offset = 150,
-            percent = (event.screenX - offset) / (window.screen.width - offset * 2) * 100;
-        percent = Math.max(Math.min(percent, 100), 0);
+    if (window.EPISODE_SELECTION.lastMove < now - 20) {
 
-        var scaled = percent * (100 - 100 / 1.75) / 100;
-        $('.select .cards').style.transform = 'translateZ(0) translateX(-' + scaled + '%)';
-    // }
+        window.EPISODE_SELECTION.lastMove = now;
+        var percent = (event.screenX - window.EPISODE_SELECTION.leftOffset) / window.EPISODE_SELECTION.percentDivisor;
+        
+        if (percent < 0) {
+            percent = 0;
+        } else if (percent > 1) {
+            percent = 1;
+        }
+
+        window.EPISODE_SELECTION.selectCards.style.transform = 'translateZ(0) translateX(-' + percent * window.EPISODE_SELECTION.screenScale + '%)';
+    }
 };
 
 App.toggleSelection = function(state) {
