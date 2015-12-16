@@ -37,6 +37,7 @@ App.setLocation = function (hash) {
 };
 
 $('.begin').addEventListener('click', function (e) {
+    TOGGLE_SELECTION_LISTENER(e);
     var interval = setInterval(function () {
         window.GLOBAL_SPEED = (window.GLOBAL_SPEED + 0.1) * 1.3;
         if (window.GLOBAL_SPEED > 70) {
@@ -82,6 +83,7 @@ if (window.location.hash && window.location.hash.length > 2) {
         var current = $('section.visible');
         if (current) current.classList.remove('visible');
         page.classList.add('visible');
+        App.toggleSelection(hash === 'select');
         window.HYPERSPACE = hash === 'home';
     }
 }

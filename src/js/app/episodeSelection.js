@@ -1,32 +1,16 @@
-window.TOGGLE_SELECTION_LISTENER = (event) => {
-   var dot, eventDoc, doc, body, pageX, pageY;
+window.TOGGLE_SELECTION_LISTENER = function(event) {
+    var offset = 150,
+        percent = (event.screenX - offset) / (window.screen.width - offset * 2) * 100;
+    percent = Math.max(Math.min(percent, 100), 0);
 
-   event = event || window.event; // IE-ism
-
-   // If pageX/Y aren't available and clientX/Y are,
-   // calculate pageX/Y - logic taken from jQuery.
-   // (This is to support old IE)
-   if (event.pageX == null && event.clientX != null) {
-       eventDoc = (event.target && event.target.ownerDocument) || document;
-       doc = eventDoc.documentElement;
-       body = eventDoc.body;
-
-       event.pageX = event.clientX +
-           (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-           (doc && doc.clientLeft || body && body.clientLeft || 0);
-       event.pageY = event.clientY +
-           (doc && doc.scrollTop || body && body.scrollTop || 0) -
-           (doc && doc.clientTop || body && body.clientTop || 0);
-   }
-   console.log(event.pageX);
-   // Use event.pageX / event.pageY here
-}
+    var scaled = percent * (100 - 100 / 1.75) / 100;
+    $('.select .cards').style.transform = 'translateX(-' + scaled + '%)';
+};
 
 App.toggleSelection = function(state) {
     if (state) {
-        document.addEventListener('mousemove', window.TOGGLE_SELECTION_LISTENER)
+        document.addEventListener('mousemove', window.TOGGLE_SELECTION_LISTENER);
     } else {
-        document.removeEventListener('mousemove', window.TOGGLE_SELECTION_LISTENER)
+        document.removeEventListener('mousemove', window.TOGGLE_SELECTION_LISTENER);
     }
-
-}
+};
