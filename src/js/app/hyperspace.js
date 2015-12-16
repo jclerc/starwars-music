@@ -2,23 +2,6 @@
 window.GLOBAL_SPEED = 0.1;
 window.HYPERSPACE = true;
 
-$('.begin').addEventListener('click', function (e) {
-    var interval = setInterval(function () {
-        window.GLOBAL_SPEED = (window.GLOBAL_SPEED + 0.1) * 1.3;
-        if (window.GLOBAL_SPEED > 70) {
-            clearInterval(interval);
-        }
-    }, 100);
-    setTimeout(function () {
-        $('.home').classList.add('exit-hyperspace');
-        $('.select').classList.add('enter-hyperspace');
-    }, 2000);
-    setTimeout(function () {
-        window.HYPERSPACE = false;
-        $('.home').classList.remove('visible');
-    }, 3000);
-});
-
 (function (canvas) {
 
     canvas.width = window.innerWidth;
