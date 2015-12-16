@@ -152,10 +152,14 @@ EPISODE SELECTION
     position: absolute;
     top: 33%;
     left: 50%;
-
     width: 100%;
-
     transform: translate(-50%, -50%);
+    font-family: SerifGothic;
+
+    .title {
+        font-size: 18px;
+        line-height: 26px;
+    }
 
     .number {
         position: relative;

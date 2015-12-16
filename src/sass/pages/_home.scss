@@ -20,7 +20,8 @@
             margin-top: 30px;
             font-size: 36px;
             text-align: center;
-            font-family: sans-serif;
+            font-family: 'SerifGothic', sans-serif;
+            text-transform: uppercase;
             color: white;
         }
     }
@@ -36,6 +37,7 @@
             font-size: 19px;
             color: white;
             margin-bottom: 20px;
+        font-family: 'RalewayLight', sans-serif;
         }
         button {
             width: 310px;
@@ -44,6 +46,9 @@
             border-radius: 30px;
             color: white;
             transition: all .3s;
+            font-family: 'FuturaStd', sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
 
             &:hover {
                 color: black;

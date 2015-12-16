@@ -12,7 +12,29 @@ body {
     line-height: map-get($fonts_settings, line-height);
 }
 
+@font-face {
+  font-family: 'FuturaStd';
+  src: url('../fonts/FuturaStdMedium.woff') format('woff'),
+       url('../fonts/FuturaStdMedium.ttf')  format('truetype');
+}
 
+@font-face {
+  font-family: 'RalewayLight';
+  src: url('../fonts/RalewayLight.woff') format('woff'),
+       url('../fonts/RalewayLight.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'RalewayMedium';
+  src: url('../fonts/RalewayMedium.woff') format('woff'),
+       url('../fonts/RalewayMedium.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'SerifGothic';
+  src: url('../fonts/SerifGothicBold.woff') format('woff'),
+       url('../fonts/SerifGothicBold.ttf')  format('truetype');
+}
 
 /**
  * Headings

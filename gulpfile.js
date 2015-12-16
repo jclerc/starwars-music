@@ -62,6 +62,14 @@ gulp.task('html', function(){
         .pipe(browserSync.stream());
 });
 
+// fonts
+gulp.task('fonts', function(){
+    gulp.src('src/fonts/*')
+        .pipe(plumber())
+        .pipe(gulp.dest('build/fonts/'))
+        .pipe(browserSync.stream());
+});
+
 
 //watches changes and trigger an action
 gulp.task('watch', function(){
@@ -74,6 +82,7 @@ gulp.task('watch', function(){
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/img/**/*', ['image']);
     gulp.watch('src/js/**/*.js', ['script']);
+    gulp.watch('src/fonts/**/*', ['fonts']);
     // might want to change to scss
     gulp.watch('src/sass/**/*', ['style']);
     gulp.watch('*.html').on('change', browserSync.reload);
@@ -81,4 +90,4 @@ gulp.task('watch', function(){
 
 //trigger by default each time you run gulp an array of tasks
 //order sensitive?
-gulp.task('default', ['script', 'style', 'image', 'html', 'watch']);
+gulp.task('default', ['script', 'fonts', 'style', 'image', 'html', 'watch']);
