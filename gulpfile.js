@@ -49,7 +49,7 @@ gulp.task('style', function(){
 
 // image compressor
 gulp.task('image', function(){
-    gulp.src('src/img/*')
+    gulp.src('src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('build/img/'));
 });

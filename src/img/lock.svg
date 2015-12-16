@@ -1,0 +1,8 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 55.7"><defs><style>.cls-1{fill:#fff;}</style></defs><title>lock</title><g id="lock-fill"><path class="cls-1" d="M42,25.2H37.7v-11a14.2,14.2,0,1,0-28.4,0v11H5a5,5,0,0,0-5,5V50.7a5,5,0,0,0,5,5H42a5,5,0,0,0,5-5V30.2A5,5,0,0,0,42,25.2ZM24.5,38.3v4.9h-2V38.3a1.94,1.94,0,0,1-1-1.7,2,2,0,0,1,4,0A1.94,1.94,0,0,1,24.5,38.3ZM35.7,25.2H11.4v-11a12.2,12.2,0,0,1,24.4,0v11H35.7Z"/></g><filter id="dropshadow" height="130%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+  <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+  <feMerge> 
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+  </feMerge>
+</filter></svg>
