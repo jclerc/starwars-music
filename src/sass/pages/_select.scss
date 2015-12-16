@@ -20,6 +20,7 @@ EPISODE SELECTION
 
     .card{
         position: relative;
+        overflow: hidden;
         width: 14.28%;
         height: 100%;
         float: left;
@@ -57,20 +58,35 @@ EPISODE SELECTION
     }
 }
 .card{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    &:hover .darken {
-        opacity: 0;
+    span.background {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform .3s;
     }
-    &:hover .number {
-        background : white;
-        color: transparent;
-        p{
-            color: black;
-            text-shadow: 0px 0px 0px white;
+    &:hover {
+        .darken {
+            opacity: 0;
+        }
+        .number {
+            background : white;
+            color: transparent;
+            p{
+                color: black;
+                text-shadow: 0px 0px 0px white;
+            }
+        }
+        span.background{
+            transform: scale(1.02);
         }
     }
+
 
     .darken{
         width: 100%;
@@ -92,34 +108,52 @@ EPISODE SELECTION
 
     }
 }
-.card:nth-child(1){background-image: url('../img/film-1.jpg')}
-.card:nth-child(2){background-image: url('../img/film-2.jpg')}
+.card:nth-child(1){
+    span.background {
+        background-image: url('../img/film-1.jpg')
+    }
+}
+.card:nth-child(2){
+    span.background {
+        background-image: url('../img/film-2.jpg')
+    }
+}
 .card:nth-child(3) {
-    background-image: url(../img/film-3.jpg);
+    span.background {
+        background-image: url(../img/film-3.jpg);
+    }
     .darken {
         opacity: 0.65;
     }
 }
 .card:nth-child(4) {
-    background-image: url(../img/film-4.jpg);
+    span.background {
+        background-image: url('../img/film-4.jpg');
+    }
     .darken {
         opacity: 0.65;
     }
 }
 .card:nth-child(5) {
-    background-image: url(../img/film-5.jpg);
+    span.background {
+        background-image: url('../img/film-5.jpg');
+    }
     .darken {
         opacity: 0.65;
     }
 }
 .card:nth-child(6) {
-    background-image: url(../img/film-6.jpg);
+    span.background {
+        background-image: url('../img/film-6.jpg');
+    }
     .darken {
         opacity: 0.65;
     }
 }
 .card:nth-child(7) {
-    background-image: url(../img/film-7.jpg);
+    span.background {
+        background-image: url('../img/film-7.jpg');
+    }
     .darken {
         opacity: 0.65;
     }
