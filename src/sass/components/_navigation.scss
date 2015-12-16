@@ -19,18 +19,15 @@
     animation-duration: .8s;
 }
 
-.select:not(.visible) {
-}
-
 .enter-hyperspace {
-    animation: enter-hyperspace 3s;
+    animation: enter-hyperspace 2s 1s;
 }
 
 .exit-hyperspace {
-    /*animation: exit-hyperspace 3s;*/
-    transition: all 3s;
-    /*transition-delay: 1s;*/
-    transform: translateZ(0) translateY(800px) scale(15, 15);
+    transition: all 0.3s cubic-bezier(0.66, 0.04, 1, 0.65);
+    transition-delay: 2s;
+    transform: translateZ(0) scale(50, 50);
+    opacity: 0;
 }
 
 .enter-up {
@@ -53,11 +50,6 @@
     0%   { transform: translateZ(0) scale(0, 0); opacity: 0; }
     100% { transform: translateZ(0) scale(1, 1); opacity: 1; }
 }
-
-/*@keyframes exit-hyperspace {
-    0%   { transform: translateZ(0) scale(1, 1); opacity: 1; }
-    100% { transform: translateZ(0) scale(10, 10); opacity: 0; }
-}*/
 
 @keyframes enter-up {
     0%   { transform: translateZ(0) translateY(-150%); }

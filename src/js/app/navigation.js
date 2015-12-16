@@ -45,16 +45,18 @@ $('.begin').addEventListener('click', function (e) {
     }, 100);
     var home = $('.home'),
         select = $('.select');
-    home.classList.add('exit-hyperspace');
-    select.classList.add('enter-hyperspace');
-    App.toggleSelection(true);
-    home.addEventListener('animationend', function begin(e) { 
+    select.addEventListener('animationend', function begin(e) { 
         home.removeEventListener('animationend', begin);
         window.HYPERSPACE = false;
         home.classList.remove('visible');
+        home.classList.remove('exit-hyperspace');
         select.classList.add('visible');
+        select.classList.remove('enter-hyperspace');
         App.setLocation('select');
     });
+    home.classList.add('exit-hyperspace');
+    select.classList.add('enter-hyperspace');
+    App.toggleSelection(true);
 });
 
 window.addEventListener('hashchange', function (e) {
