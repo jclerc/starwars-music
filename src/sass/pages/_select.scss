@@ -3,35 +3,41 @@ EPISODE SELECTION
 **************/
 
 .cards {
-
     width: 175%;
     height: 100%;
-    color: white;
+
     text-align: center;
+
+    color: white;
     text-shadow: 0px 1px 2px #1B1B1B;
 
     .card {
-
         position: relative;
+
+        float: left;
         overflow: hidden;
+
         width: 14.28%;
         height: 100%;
-        float: left;
-        transform: translateZ(0);
+
         transition: all .3s;
+        transform: translateZ(0);
 
         span.background {
-            display: block;
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            transform: translateZ(0);
+
+            display: block;
+
             transition: transform .3s;
+            transform: translateZ(0);
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
 
         &:hover {
@@ -39,10 +45,10 @@ EPISODE SELECTION
             .darken {
                 opacity: 0;
             }
-            
+
             .number {
-                background : white;
                 color: transparent;
+                background : white;
                 p {
                     color: black;
                     text-shadow: 0px 0px 0px white;
@@ -52,7 +58,7 @@ EPISODE SELECTION
             span.background{
                 transform: scale(1.02) translateZ(0);
             }
-        
+
             .lock {
                 animation: pop .5s;
 
@@ -63,32 +69,37 @@ EPISODE SELECTION
         .darken {
             width: 100%;
             height: 100%;
-            background-color: #1C1C1C;
-            opacity: .15;
+
             transition: opacity .3s;
+
+            opacity: .15;
+            background-color: #1C1C1C;
         }
 
         .lock {
             position: absolute;
             top:50%; left: 50%;
+
             width: 50px;
+
             transform: translate(-50%, -50%);
+
             opacity: .95;
 
         }
-        
+
         &:nth-child(1){
             span.background {
                 background-image: url('../img/film-1.jpg')
             }
         }
-        
+
         &:nth-child(2){
             span.background {
                 background-image: url('../img/film-2.jpg')
             }
         }
-        
+
         &:nth-child(3) {
             span.background {
                 background-image: url('../img/film-3.jpg');
@@ -97,7 +108,7 @@ EPISODE SELECTION
                 opacity: 0.65;
             }
         }
-        
+
         &:nth-child(4) {
             span.background {
                 background-image: url('../img/film-4.jpg');
@@ -106,7 +117,7 @@ EPISODE SELECTION
                 opacity: 0.65;
             }
         }
-        
+
         &:nth-child(5) {
             span.background {
                 background-image: url('../img/film-5.jpg');
@@ -115,7 +126,7 @@ EPISODE SELECTION
                 opacity: 0.65;
             }
         }
-        
+
         &:nth-child(6) {
             span.background {
                 background-image: url('../img/film-6.jpg');
@@ -124,7 +135,7 @@ EPISODE SELECTION
                 opacity: 0.65;
             }
         }
-        
+
         &:nth-child(7) {
             span.background {
                 background-image: url('../img/film-7.jpg');
@@ -137,31 +148,41 @@ EPISODE SELECTION
 }
 
 .select .content {
-    width: 100%;
     position: absolute;
     top: 33%;
     left: 50%;
+
+    width: 100%;
+
     transform: translate(-50%, -50%);
 
     .number {
+        position: relative;
+
         display: inline-block;
-        margin-bottom: 20px;
+
         width: 60px;
         height: 60px;
-        position: relative;
+        margin-bottom: 20px;
+
+        transition: all .3s;
         transform: rotate(45deg);
+
         border: 2px solid white;
         border-radius: 20%;
         box-shadow: 0px 1px 2px #1B1B1B;
-        transition: all .3s;
 
         p {
-            text-shadow: 0px 0px 2px #1B1B1B;
-            transform:  rotate(-45deg) translate(-11px, 11px);
-            font-size: 30px;
-            padding: auto;
             top: 50%;
             left: 50%;
+
+            padding: auto;
+
+            transform:  rotate(-45deg) translate(-11px, 11px);
+
+            text-shadow: 0px 0px 2px #1B1B1B;
+
+            font-size: 30px;
         }
     }
 }
