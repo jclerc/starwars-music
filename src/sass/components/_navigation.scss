@@ -3,6 +3,10 @@
  *
  */
 
+.navigation {
+    cursor: pointer;
+}
+
 .visible {
     transform: translateY(0);
     z-index: 100;
@@ -18,21 +22,14 @@
 }
 
 .select:not(.visible) {
-    transform: scale(0, 0);
-    opacity: 0;
-    transition: all 1s;
 }
 
 .enter-hyperspace {
-    transform: scale(1, 1);
-    opacity: 1;
-    transition: all 1s;
+    animation-name: enter-hyperspace;
 }
 
 .exit-hyperspace {
-    transform: scale(10, 10);
-    opacity: 0;
-    transition: all 1s;
+    animation-name: exit-hyperspace;
 }
 
 .enter-up {
@@ -49,6 +46,16 @@
 
 .exit-down {
     animation-name: exit-down;
+}
+
+@keyframes enter-hyperspace {
+    0%   { transform: translateZ(0) scale(0, 0); opacity: 0; }
+    100% { transform: translateZ(0) scale(1, 1); opacity: 1; }
+}
+
+@keyframes exit-hyperspace {
+    0%   { transform: translateZ(0) scale(1, 1); opacity: 1; }
+    100% { transform: translateZ(0) scale(0, 0); opacity: 0; }
 }
 
 @keyframes enter-up {
