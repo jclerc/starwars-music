@@ -3,7 +3,7 @@
 
     var episodeIsPlaying = false;
 
-    var canvas = $('.episode-1 canvas.drawing');
+    var canvas = $('.episode-1 .drawing canvas');
 
     if (!canvas || !canvas.getContext) return;
 
@@ -13,6 +13,8 @@
         width = canvas.width,
         height = canvas.height;
 
+    var frequency = 40,
+        angleCount = 30;
 
     // Tutorial from: http://apprentice.craic.com/tutorials/30
 
@@ -28,6 +30,7 @@
     var audioUrl = 'audio/episode1.mp3';
     var middleWidth = ~~(width / 2);
     var middleHeight = ~~(height / 2);
+    var lastDraw = 0;
 
     var setupAudioNodes = function () {
         sourceNode     = audioContext.createBufferSource();
@@ -62,7 +65,7 @@
     var playSound = function (buffer) {
         sourceNode.buffer = buffer;
         // sourceNode.start();    // Play the sound now
-        sourceNode.start(0, 39);
+        sourceNode.start(0, 38);
         sourceNode.loop = true;
         audioPlaying = true;
     };
@@ -71,34 +74,76 @@
         console.warn(e);
     };
 
+    context.strokeStyle = 'white';
+    context.shadowBlur = 100;
+    context.shadowColor = 'rgb(220, 20, 220)';
+    // context.shadowColor = 'blue';
+
     var drawSoung = function() {
         if (episodeIsPlaying) {
-            resetCanvas();
-            var length = amplitudeArray.length * 0.95,
-                start = ~~(length * 0.05);
+            clearCanvas();
+            context.lineWidth = ~~(4 + Math.random() * 8);
+
+            var k, i, value = 0;
+            var amplitudeLength = amplitudeArray.length;
+            var countOffset = ~~(amplitudeLength / angleCount);
+            var drawOffset = ~~(width / angleCount);
+
             context.beginPath();
-            context.strokeStyle = 'white';
-            context.lineWidth = 4;
             context.moveTo(0, middleHeight);
-            // for (var i = length; i >= start; i-=5) {
-            for (var i = start; i < length; i += 30) {
-                var value = amplitudeArray[i] / 256;
-                var y = height - (height * value) - 1;
-                context.lineTo(i * 4/4 - start, y);
-                // context.fillRect(i-start, y, 1, 30);
+            k = 0;
+            for (i = countOffset; i < amplitudeLength - countOffset; i += countOffset) {
+                k++;
+                value = height - (height * amplitudeArray[i] / 256) - 1;
+                context.lineTo(k * drawOffset, value);
+
             }
+            context.lineTo(width, middleHeight);
             context.stroke();
+
+            context.beginPath();
+            context.moveTo(0, middleHeight);
+            k = 0;
+            for (i = amplitudeLength - countOffset; i >= countOffset; i -= countOffset) {
+                k++;
+                value = height - (height * amplitudeArray[i] / 256) - 1;
+                context.lineTo(k * drawOffset, value);
+
+            }
+            context.lineTo(width, middleHeight);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(0, middleHeight);
+            k = 0;
+            for (i = amplitudeLength - countOffset; i >= countOffset; i -= countOffset) {
+                k++;
+                context.lineTo(k * drawOffset, Math.random() * 50 - 25 + middleHeight);
+
+            }
+            context.lineTo(width, middleHeight);
+            context.stroke();
+            
+            // episodeIsPlaying = false;
+            
+            // var length = amplitudeArray.length * 0.95,
+                // start = ~~(length * 0.05);
+            // context.beginPath();
+            // var value, i, y;
+            // context.moveTo(0, middleHeight);
+            // for (i = start; i < length; i += 60) {
+                // i = ~~i;
+                // value = amplitudeArray[i] / 256;
+                // y = height - (height * value) - 1;
+                // context.lineTo(i - start, y);
+            // }
+            // context.lineTo(width, middleHeight);
+            // context.stroke();
         }
     };
 
     var clearCanvas = function () {
         context.clearRect(0, 0, width, height);
-    };
-
-    var resetCanvas = function () {
-        context.clearRect(0, 0, width, height);
-        // context.fillStyle = 'rgba(0, 0, 0, 0.2)';
-        // context.fillRect(0, 0, width, height);
     };
 
     try {
@@ -116,6 +161,9 @@
         // setup the event handler that is triggered every time enough samples have been collected
         // trigger the audio analysis and draw the results
         javascriptNode.addEventListener('audioprocess', function (e) {
+            var now = new Date().getTime();
+            if (lastDraw > now - frequency) return;
+            lastDraw = now;
             // get the Time Domain data for this sample
             analyserNode.getByteTimeDomainData(amplitudeArray);
             // analyserNode.getByteFrequencyData(amplitudeArray);
