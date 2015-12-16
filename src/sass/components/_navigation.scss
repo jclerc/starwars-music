@@ -12,8 +12,6 @@
     z-index: 100;
 }
 
-.enter-hyperspace,
-.enter-hyperspace,
 .enter-up,
 .enter-down,
 .exit-up,
@@ -25,11 +23,14 @@
 }
 
 .enter-hyperspace {
-    animation-name: enter-hyperspace;
+    animation: enter-hyperspace 3s;
 }
 
 .exit-hyperspace {
-    animation-name: exit-hyperspace;
+    /*animation: exit-hyperspace 3s;*/
+    transition: all 3s;
+    /*transition-delay: 1s;*/
+    transform: translateZ(0) translateY(800px) scale(15, 15);
 }
 
 .enter-up {
@@ -53,10 +54,10 @@
     100% { transform: translateZ(0) scale(1, 1); opacity: 1; }
 }
 
-@keyframes exit-hyperspace {
+/*@keyframes exit-hyperspace {
     0%   { transform: translateZ(0) scale(1, 1); opacity: 1; }
-    100% { transform: translateZ(0) scale(0, 0); opacity: 0; }
-}
+    100% { transform: translateZ(0) scale(10, 10); opacity: 0; }
+}*/
 
 @keyframes enter-up {
     0%   { transform: translateZ(0) translateY(-150%); }

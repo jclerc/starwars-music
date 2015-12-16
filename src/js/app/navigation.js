@@ -13,6 +13,7 @@ App.goto = function (identifier, gotoUp) {
     } else if (current == next) {
         throw new Error('Moving to the same page..');
     } else {
+        App.toggleSelection(identifier === 'select');
         if (current) {
             current.classList.remove('visible');
             current.classList.add('exit-' + direction);
@@ -46,6 +47,7 @@ $('.begin').addEventListener('click', function (e) {
         select = $('.select');
     home.classList.add('exit-hyperspace');
     select.classList.add('enter-hyperspace');
+    App.toggleSelection(true);
     home.addEventListener('animationend', function begin(e) { 
         home.removeEventListener('animationend', begin);
         window.HYPERSPACE = false;
