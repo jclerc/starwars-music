@@ -37,30 +37,29 @@ window.HYPERSPACE = true;
         }
 
         (function loop() {
-            if (window.HYPERSPACE) {    
+            if (window.HYPERSPACE) {
+
                 window.requestAnimationFrame(loop);
-            }
+                context.clearRect(0, 0, width, height);
 
-            context.clearRect(0, 0, width, height);
-
-            for (var i = 0; i < starsCount; i++) {
-                var s = stars[i];
-                if (s.x < 0 || s.y < 0 || s.x > width || s.y > height) {
-                    s = stars[i] = createStar();
+                for (var i = 0; i < starsCount; i++) {
+                    var s = stars[i];
+                    if (s.x < 0 || s.y < 0 || s.x > width || s.y > height) {
+                        s = stars[i] = createStar();
+                    }
+                    context.strokeStyle = s.color;
+                    context.lineWidth = s.size;
+                    context.shadowBlur = 5;
+                    context.lineCap = 'round';
+                    context.shadowColor = "#555";
+                    context.beginPath();
+                    context.moveTo(s.x, s.y);
+                    context.lineTo(s.x + 0.1 + s.length * s.xs * window.GLOBAL_SPEED, s.y + s.length * s.ys * window.GLOBAL_SPEED);
+                    context.stroke();
+                    s.x += s.xs * window.GLOBAL_SPEED;
+                    s.y += s.ys * window.GLOBAL_SPEED;
                 }
-                context.strokeStyle = s.color;
-                context.lineWidth = s.size;
-                context.shadowBlur = 5;
-                context.lineCap = 'round';
-                context.shadowColor = "#555";
-                context.beginPath();
-                context.moveTo(s.x, s.y);
-                context.lineTo(s.x + 0.1 + s.length * s.xs * window.GLOBAL_SPEED, s.y + s.length * s.ys * window.GLOBAL_SPEED);
-                context.stroke();
-                s.x += s.xs * window.GLOBAL_SPEED;
-                s.y += s.ys * window.GLOBAL_SPEED;
             }
-
         })();
     }
 

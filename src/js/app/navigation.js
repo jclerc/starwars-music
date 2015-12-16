@@ -5,7 +5,7 @@
 
 App.goto = function (identifier, gotoUp) {
     var current = $('section.visible'),
-        next = $('.' + identifier),
+        next = $('.page.' + identifier),
         direction = gotoUp ? 'up' : 'down';
 
     if (!next || typeof gotoUp !== 'boolean') {
@@ -32,10 +32,33 @@ App.goto = function (identifier, gotoUp) {
     }
 };
 
+App.home = function () {
+    // Rerun the page to restart the canvas
+    window.location.href = window.location.href;
+};
+
+App.gotoHash = function (homeFallback) {
+    if (window.location.hash && window.location.hash.length > 2) {
+        var page = $('.page.' + window.location.hash.substring(2));
+        if (page && page.classList.contains('page')) {
+            var current = $('section.visible');
+            if (current) current.classList.remove('visible');
+            page.classList.add('visible');
+            App.toggleSelection(page.classList.contains('select'));
+            window.HYPERSPACE = false;
+            return;
+        }
+    }
+    if (homeFallback) {
+        App.home();
+    }
+};
+
 App.setLocation = function (hash) {
     window.location.hash = '#/' + hash;
 };
 
+// Bind begin button to hyperspace animation
 $('.begin').addEventListener('click', function (e) {
     TOGGLE_SELECTION_LISTENER(e);
     var interval = setInterval(function () {
@@ -44,10 +67,10 @@ $('.begin').addEventListener('click', function (e) {
             clearInterval(interval);
         }
     }, 100);
-    var home = $('.home'),
-        select = $('.select');
+    var home = $('.page.home'),
+        select = $('.page.select');
     select.addEventListener('animationend', function begin(e) { 
-        home.removeEventListener('animationend', begin);
+        select.removeEventListener('animationend', begin);
         window.HYPERSPACE = false;
         home.classList.remove('visible');
         home.classList.remove('exit-hyperspace');
@@ -60,10 +83,7 @@ $('.begin').addEventListener('click', function (e) {
     App.toggleSelection(true);
 });
 
-window.addEventListener('hashchange', function (e) {
-    e.preventDefault();
-});
-
+// Bind navigation elements to animations
 var bindNavigation = function (element) {
     element.addEventListener('click', function (e) {
         App.goto(this.getAttribute('data-target'), this.getAttribute('data-direction') === 'up');
@@ -76,15 +96,9 @@ for (var i = elements.length - 1; i >= 0; i--) {
     bindNavigation(elements[i]);
 }
 
-if (window.location.hash && window.location.hash.length > 2) {
-    var hash = window.location.hash.substring(2),
-        page = $('.' + hash);
-    if (page && page.classList.contains('page')) {
-        var current = $('section.visible');
-        if (current) current.classList.remove('visible');
-        page.classList.add('visible');
-        App.toggleSelection(hash === 'select');
-        window.HYPERSPACE = hash === 'home';
-    }
-}
+// Change page if hash change
+window.addEventListener('hashchange', App.gotoHash);
+
+// If a hash is already set
+App.gotoHash(false);
 
