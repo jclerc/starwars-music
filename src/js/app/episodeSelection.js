@@ -1,10 +1,17 @@
-window.TOGGLE_SELECTION_LISTENER = function(event) {
-    var offset = 150,
-        percent = (event.screenX - offset) / (window.screen.width - offset * 2) * 100;
-    percent = Math.max(Math.min(percent, 100), 0);
 
-    var scaled = percent * (100 - 100 / 1.75) / 100;
-    $('.select .cards').style.transform = 'translateZ(0) translateX(-' + scaled + '%)';
+window.LAST_MOVE = 0;
+
+window.TOGGLE_SELECTION_LISTENER = function(event) {
+    var now = new Date().getTime();
+    // if (window.LAST_MOVE < now - 100) {
+        window.LAST_MOVE = now;
+        var offset = 150,
+            percent = (event.screenX - offset) / (window.screen.width - offset * 2) * 100;
+        percent = Math.max(Math.min(percent, 100), 0);
+
+        var scaled = percent * (100 - 100 / 1.75) / 100;
+        $('.select .cards').style.transform = 'translateZ(0) translateX(-' + scaled + '%)';
+    // }
 };
 
 App.toggleSelection = function(state) {
