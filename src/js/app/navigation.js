@@ -76,12 +76,13 @@ for (var i = elements.length - 1; i >= 0; i--) {
 }
 
 if (window.location.hash && window.location.hash.length > 2) {
-    var hash = '.' + window.location.hash.substring(2),
-        page = $(hash);
+    var hash = window.location.hash.substring(2),
+        page = $('.' + hash);
     if (page && page.classList.contains('page')) {
         var current = $('section.visible');
         if (current) current.classList.remove('visible');
         page.classList.add('visible');
+        window.HYPERSPACE = hash === 'home';
     }
 }
 
