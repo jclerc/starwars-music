@@ -4,7 +4,7 @@ window.TOGGLE_SELECTION_LISTENER = function(event) {
     percent = Math.max(Math.min(percent, 100), 0);
 
     var scaled = percent * (100 - 100 / 1.75) / 100;
-    $('.select .cards').style.transform = 'translateX(-' + scaled + '%)';
+    $('.select .cards').style.transform = 'translateZ(0) translateX(-' + scaled + '%)';
 };
 
 App.toggleSelection = function(state) {
