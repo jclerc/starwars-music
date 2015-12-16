@@ -16,20 +16,22 @@ App.goto = function (identifier, gotoUp) {
         if (current) {
             current.classList.remove('visible');
             current.classList.add('exit-' + direction);
-            current.addEventListener('animationend', function (e) {
+            current.addEventListener('animationend', function animationend(e) {
+                current.removeEventListener('animationend', animationend);
                 current.classList.remove('exit-' + direction);
             });
         }
         next.classList.add('visible');
         next.classList.add('enter-' + direction);
-        next.addEventListener('animationend', function (e) {
+        next.addEventListener('animationend', function animationend(e) {
+            next.removeEventListener('animationend', animationend);
             next.classList.remove('enter-' + direction);
-            App.setHashLocation(identifier);
+            App.setLocation(identifier);
         });
     }
 };
 
-App.setHashLocation = function (hash) {
+App.setLocation = function (hash) {
     window.location.hash = '#/' + hash;
 };
 
@@ -40,21 +42,27 @@ $('.begin').addEventListener('click', function (e) {
             clearInterval(interval);
         }
     }, 100);
-    setTimeout(function () {
-        $('.home').classList.add('exit-hyperspace');
-        $('.select').classList.add('enter-hyperspace');
-    }, 2000);
-    setTimeout(function () {
+    var home = $('.home'),
+        select = $('.select');
+    home.classList.add('exit-hyperspace');
+    select.classList.add('enter-hyperspace');
+    home.addEventListener('animationend', function begin(e) { 
+        home.removeEventListener('animationend', begin);
         window.HYPERSPACE = false;
-        $('.home').classList.remove('visible');
-        $('.select').classList.add('visible');
-        App.setHashLocation('select');
-    }, 3000);
+        home.classList.remove('visible');
+        select.classList.add('visible');
+        App.setLocation('select');
+    });
+});
+
+window.addEventListener('hashchange', function (e) {
+    e.preventDefault();
 });
 
 var bindNavigation = function (element) {
     element.addEventListener('click', function (e) {
         App.goto(this.getAttribute('data-target'), this.getAttribute('data-direction') === 'up');
+        e.preventDefault();
     });
 };
 
@@ -63,7 +71,7 @@ for (var i = elements.length - 1; i >= 0; i--) {
     bindNavigation(elements[i]);
 }
 
-if (window.location.hash) {
+if (window.location.hash && window.location.hash.length > 2) {
     var hash = '.' + window.location.hash.substring(2),
         page = $(hash);
     if (page && page.classList.contains('page')) {
