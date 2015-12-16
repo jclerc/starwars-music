@@ -15,6 +15,7 @@ $('.begin').addEventListener('click', function (e) {
     }, 2000);
     setTimeout(function () {
         window.HYPERSPACE = false;
+        $('.home').classList.remove('visible');
     }, 3000);
 });
 
