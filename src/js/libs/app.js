@@ -46,7 +46,11 @@ var App = {},
 
     App.home = function () {
         // Rerun the page to restart the canvas
-        window.location.reload();
+        if (window.location.href) {
+             window.location.href = window.location.href.substring(0, window.location.href.indexOf('#') - 1);
+        } else {
+            window.location.reload();
+        }
     };
 
     var isChangingHash = false;

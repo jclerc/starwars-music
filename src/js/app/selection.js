@@ -33,7 +33,6 @@
     };
 
     App.bind('select', 'loading', function () {
-        console.log('LOADING');
         document.addEventListener('mousemove', selectionListener);
     });
 
