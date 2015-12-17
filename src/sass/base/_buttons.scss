@@ -2,6 +2,7 @@
  * Button styles
  *
  */
+
  button.go-select {
      position: absolute;
      top: 10px;
@@ -10,7 +11,9 @@
      z-index: 5;
 
      p {
-         color: white;
+        color: white;
+        text-transform: uppercase;
+        font-family: 'SerifGothic', serif;
      }
 
      .arrow {
@@ -40,3 +43,45 @@
          cursor: pointer;
      }
  }
+
+
+button.go-vote {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .arrow {
+        padding-bottom: 20px;
+
+        .branch {
+            display: inline-block;
+            width: 30px;
+            height: 3px;
+            margin: -3px;
+            border-radius: 1px;
+            background: white;
+        }
+
+        .left {
+            transform: rotate(20deg);
+            transform-origin: bottom right;
+        }
+
+        .right {
+            transform: rotate(-20deg);
+            transform-origin: bottom left;
+        }
+    }
+
+    p {
+        font-family: 'SerifGothic', serif;
+        padding-bottom: 10px;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

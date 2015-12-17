@@ -9,47 +9,6 @@ section.experiment {
     height: 100%;
     background: #C74D3A;
 
-
-
-    button.go-vote {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        .arrow {
-            padding-bottom: 20px;
-
-            .branch {
-                display: inline-block;
-                width: 30px;
-                height: 3px;
-                margin: -3px;
-                border-radius: 1px;
-                background: white;
-            }
-
-            .left {
-                transform: rotate(20deg);
-                transform-origin: bottom right;
-            }
-
-            .right {
-                transform: rotate(-20deg);
-                transform-origin: bottom left;
-            }
-        }
-
-        p {
-            padding-bottom: 10px;
-            color: white;
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
     .title {
         display: flex;
         align-items: baseline;
@@ -64,6 +23,11 @@ section.experiment {
             text-align: right;
             position: relative;
             width: 40%;
+            font-family: 'RalewayLight', serif;
+
+            h3 {
+                font-family: 'RalewayMedium', serif;
+            }
 
             &::before {
                 content: '';
@@ -82,7 +46,8 @@ section.experiment {
             text-align: center;
             min-width: 90px;
             height: 90px;
-            padding-top: 30px;
+            line-height: 82px;
+            vertical-align: middle;
             box-shadow: 0 1px 1px rgba(#1b1b1b, 0.5);
             border: 4px solid white;
             border-radius: 10px;
@@ -91,6 +56,7 @@ section.experiment {
 
             p {
                 transform: rotate(-45deg);
+                font-family: 'SerifGothic', serif;
                 font-size: 50px;
             }
         }
@@ -100,6 +66,7 @@ section.experiment {
             display: inline-block;
             position: relative;
             width: 40%;
+            font-family: 'RalewayLight', serif;
 
             &::before {
                 content: '';
