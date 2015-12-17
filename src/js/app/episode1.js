@@ -35,7 +35,7 @@
     var lastDraw = 0;
     var energyInterval = -1;
     var averageVolume = 0;
-    var sinOffset = 0;
+    var sinOffset = Math.PI / 2;
 
     var setupAudioNodes = function () {
         sourceNode     = audioContext.createBufferSource();
@@ -103,25 +103,23 @@
         // RANDOM ELECTRIC ARC
 
         // clearCanvas();
-        // context.lineWidth = 3;
+        context.lineWidth = 3;
 
-        // var k, i, value = 0;
-        // var amplitudeLength = amplitudeArray.length;
-        // var amplitudeOffset = ~~(amplitudeLength / amplitudeCount);
-        // var amplitudeDraw = ~~(width / amplitudeCount);
-        // var size = 150;
+        var k, i, value = 0;
+        var amplitudeLength = amplitudeArray.length;
+        var amplitudeOffset = ~~(amplitudeLength / amplitudeCount);
+        var amplitudeDraw = ~~(width / amplitudeCount);
+        var size = 150;
 
-        // context.beginPath();
-        // context.moveTo(0, middleHeight);
-        // k = 0;
-        // for (i = amplitudeOffset; i < amplitudeLength - amplitudeOffset; i += amplitudeOffset) {
-        //     k++;
-        //     context.lineTo(k * amplitudeDraw, (Math.random() * size - size/2) * averageVolume + middleHeight);
-
-        // }
-        // context.lineTo(width, middleHeight);
-        // context.stroke();
-
+        context.beginPath();
+        context.moveTo(0, middleHeight);
+        k = 0;
+        for (i = amplitudeOffset; i < amplitudeLength - amplitudeOffset; i += amplitudeOffset) {
+            k++;
+            context.lineTo(k * amplitudeDraw, (Math.random() * size - size/2) * averageVolume + middleHeight);
+        }
+        context.lineTo(width, middleHeight);
+        context.stroke();
     };
 
     var drawSound = function () {
@@ -159,28 +157,24 @@
             context.lineTo(width, middleHeight);
             context.stroke();
 
-            sinOffset -= 0.9;
 
-            // episodeIsPlaying = false;
+            context.lineWidth = ~~(2 + Math.random() * 4);
 
+            var amplitudeLength = amplitudeArray.length;
+            var amplitudeOffset = ~~(amplitudeLength / amplitudeCount);
+            var amplitudeDraw = ~~(width / amplitudeCount);
 
-            // context.lineWidth = ~~(2 + Math.random() * 4);
+            context.beginPath();
+            context.moveTo(0, middleHeight);
+            k = 0;
+            for (i = amplitudeOffset; i < amplitudeLength - amplitudeOffset; i += amplitudeOffset) {
+                k++;
+                value = height - (height * amplitudeArray[i] / 256) - 1;
+                context.lineTo(k * amplitudeDraw, value);
 
-            // var amplitudeLength = amplitudeArray.length;
-            // var amplitudeOffset = ~~(amplitudeLength / amplitudeCount);
-            // var amplitudeDraw = ~~(width / amplitudeCount);
-
-            // context.beginPath();
-            // context.moveTo(0, middleHeight);
-            // k = 0;
-            // for (i = amplitudeOffset; i < amplitudeLength - amplitudeOffset; i += amplitudeOffset) {
-            //     k++;
-            //     value = height - (height * amplitudeArray[i] / 256) - 1;
-            //     context.lineTo(k * amplitudeDraw, value);
-
-            // }
-            // context.lineTo(width, middleHeight);
-            // context.stroke();
+            }
+            context.lineTo(width, middleHeight);
+            context.stroke();
 
 
             // context.beginPath();
@@ -254,8 +248,11 @@
         clearInterval(energyInterval);
         episodeIsPlaying = false;
         sourceNode.stop(0);
-        clearCanvas();
         audioPlaying = false;
+    });
+
+    App.bind('episode-1', 'unloaded', function () {
+        clearCanvas();
     });
 
 })();
