@@ -3,7 +3,9 @@
  *
  */
 
-var App = {};
+var App = {},
+    $ = document.querySelector.bind(document),
+    $$ = document.querySelectorAll.bind(document);
 
 (function () {
 

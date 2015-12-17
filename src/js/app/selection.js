@@ -1,3 +1,7 @@
+/**
+ * Episode selection
+ *
+ */
 
 (function () {
 
@@ -11,7 +15,7 @@
 
     select.percentDivisor = window.screen.width - select.rightOffset - select.leftOffset;
 
-    var toggleSelectionListener = function(event) {
+    var selectionListener = function(event) {
         var now = new Date().getTime();
         if (select.lastMove < now - 20) {
 
@@ -29,11 +33,12 @@
     };
 
     App.bind('select', 'loading', function () {
-        document.addEventListener('mousemove', toggleSelectionListener);
+        console.log('LOADING');
+        document.addEventListener('mousemove', selectionListener);
     });
 
     App.bind('select', 'unloading', function () {
-        document.removeEventListener('mousemove', toggleSelectionListener);
+        document.removeEventListener('mousemove', selectionListener);
     });
 
 })();
