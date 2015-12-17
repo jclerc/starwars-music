@@ -9,6 +9,16 @@ section.experiment {
     height: 100%;
     background: #C74D3A;
 
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center -600px, transparent 33%, rgba(0, 0, 0, 0.3) 100%);
+    }
+
     .title {
         display: flex;
         align-items: baseline;
