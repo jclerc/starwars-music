@@ -43,6 +43,7 @@
         sourceNode     = audioContext.createBufferSource();
         analyserNode   = audioContext.createAnalyser();
         javascriptNode = audioContext.createScriptProcessor(sampleSize, 1, 1);
+
         // Create the array for the data values
         amplitudeArray = new Uint8Array(analyserNode.frequencyBinCount);
         frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
@@ -73,7 +74,7 @@
     var playSound = function (buffer) {
         sourceNode.buffer = buffer;
         // sourceNode.start();    // Play the sound now
-        sourceNode.start(0, 38);
+        sourceNode.start(0);
         sourceNode.loop = true;
         audioPlaying = true;
     };
