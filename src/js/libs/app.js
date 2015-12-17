@@ -37,7 +37,9 @@ var App = {},
                 App.call(identifier, 'loaded');
                 next.removeEventListener('animationend', animationend);
                 next.classList.remove('enter-' + direction);
-                App.setLocation(identifier);
+                if (identifier !== 'home') {
+                    App.setLocation(identifier);
+                }
             });
         }
     };
