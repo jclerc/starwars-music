@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <section data-page="home" class="page home visible">
+    <section data-page="home"  class="page home visible">
         <canvas class="hyperspace"></canvas>
         <div class="splash">
             <img src="img/star-wars-logo.svg" alt="Star Wars" class="logo">
@@ -64,6 +64,13 @@
             <div class="card navigation" data-target="vote" data-direction="down">
                 <span class="background"></span>
                 <div class="darken"></div>
+                <button class="go-vote navigation" data-target="vote" data-direction="down">
+                    <p>CHOOSE THE NEXT SCENE !</p>
+                    <div class="arrow">
+                        <div class="left branch"></div>
+                        <div class="right branch"></div>
+                    </div>
+                </button>
                 <div class="content">
                     <div class="number">
                         <p>III</p>
@@ -147,8 +154,8 @@
                 <h3>Scène 37</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
+            <p class="number">I</p>
             <div class="episode-number">
-                <p>I</p>
             </div>
             <div class="description">
                 <p>Lorem ipsum dolor sit.
@@ -176,8 +183,8 @@
                 <h3>Scène 12</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
+            <p class="number">II</p>
             <div class="episode-number">
-                <p>II</p>
             </div>
             <div class="description">
                 <p>Lorem ipsum dolor sit.
@@ -221,8 +228,8 @@
                 <button type="button" class="button-vote">Je vote</button>
             </div>
         </div>
-
     </section>
+
     <script src="js/script.js"></script>
 </body>
 

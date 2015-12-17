@@ -23,7 +23,7 @@
              display: inline-block;
              width: 30px;
              height: 3px;
-             margin: -3px;
+             margin: -2px;
              background: white;
              border-radius: 1px;
          }
@@ -49,6 +49,7 @@ button.go-vote {
     position: absolute;
     bottom: 10px;
     left: 50%;
+    width: 100%;
     transform: translateX(-50%);
     z-index: 5;
 

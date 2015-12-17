@@ -6,15 +6,13 @@ EPISODE SELECTION
     width: 175%;
     height: 100%;
 
+    transform: translateZ(0);
     text-align: center;
 
     color: white;
     text-shadow: 0px 1px 2px #1B1B1B;
-    transform: translateZ(0);
 
     .card {
-        position: relative;
-
         float: left;
         overflow: hidden;
 
@@ -40,6 +38,57 @@ EPISODE SELECTION
             background-position: center;
             background-size: cover;
         }
+
+        .content {
+            position: absolute;
+            top: 33%;
+            left: 50%;
+
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+
+            transform: translate(-50%, -50%);
+
+            font-family: 'SerifGothic', serif;
+
+            align-items: center;
+
+            .title {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .number {
+                display: flex;
+
+                width: 60px;
+                height: 60px;
+                margin-bottom: 30px;
+
+                transition: all .3s;
+                transform: rotate(45deg);
+
+                border: 2px solid white;
+                border-radius: 20%;
+                box-shadow: 0px 1px 2px #1B1B1B;
+
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    padding: auto;
+
+                    transform:  rotate(-45deg);
+
+                    text-shadow: 0px 0px 2px #1B1B1B;
+
+                    font-size: 30px;
+                }
+            }
+        }
+
 
         &:hover {
 
@@ -144,51 +193,6 @@ EPISODE SELECTION
             .darken {
                 opacity: 0.65;
             }
-        }
-    }
-}
-
-.select .content {
-    position: absolute;
-    top: 33%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    font-family: 'SerifGothic', serif;
-
-    .title {
-        font-size: 18px;
-        line-height: 26px;
-    }
-
-    .number {
-        position: relative;
-
-        display: inline-block;
-
-        width: 60px;
-        height: 60px;
-        margin-bottom: 20px;
-
-        transition: all .3s;
-        transform: rotate(45deg);
-
-        border: 2px solid white;
-        border-radius: 20%;
-        box-shadow: 0px 1px 2px #1B1B1B;
-
-        p {
-            top: 50%;
-            left: 50%;
-
-            padding: auto;
-
-            transform:  rotate(-45deg) translate(-11px, 11px);
-
-            text-shadow: 0px 0px 2px #1B1B1B;
-
-            line-height: 0.8;
-            font-size: 30px;
         }
     }
 }

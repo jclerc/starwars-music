@@ -51,6 +51,14 @@ section.experiment {
             }
         }
 
+        p.number {
+            position: absolute;
+            top: 167px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'SerifGothic', serif;
+            font-size: 50px;
+        }
         .episode-number {
             display: inline-block;
             text-align: center;
@@ -64,11 +72,6 @@ section.experiment {
             margin: 50px;
             transform: rotate(45deg);
 
-            p {
-                transform: rotate(-45deg);
-                font-family: 'SerifGothic', serif;
-                font-size: 50px;
-            }
         }
 
         .description {
