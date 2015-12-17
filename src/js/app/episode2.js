@@ -223,27 +223,32 @@
             var frenquencyLength = frequencyArray.length - 300;
             var frenquencyOffset = ~~(frenquencyLength / frequencyCount);
             var frequencyDraw = ~~(middleWidth / frequencyCount);
+            var drawing = -1;
 
             // DOUBLE FREQUENCY ARC - SYMMETRIC
 
             energyCtx.lineWidth = ~~(3 + Math.random() * 6);
             energyCtx.beginPath();
-            energyCtx.moveTo(0, middleHeight);
 
-            k = 0;
+            k = 0;            
             for (i = frenquencyLength - frenquencyOffset; i >= 0; i -= frenquencyOffset) {
                 k++;
-                value = frequencyArray[i + 5] / 256;
-                energyCtx.lineTo(k * frequencyDraw, energyHeight - middleHeight - (value * middleHeight));
+                if (drawing > -1) {
+                    value = frequencyArray[i + 5] / 256;
+                    energyCtx.lineTo(k * frequencyDraw, energyHeight - middleHeight - (value * middleHeight));
+                } else if (frequencyArray[i + 5] / 256 > 0.1) {
+                    drawing = i;
+                    energyCtx.moveTo(k * frequencyDraw, middleHeight);
+                }
             }
 
             k = 0;
-            for (i = 0; i < frenquencyLength - frenquencyOffset * 2; i += frenquencyOffset) {
+            for (i = 0; i < frenquencyLength - frenquencyOffset * 2 - (frenquencyLength - drawing); i += frenquencyOffset) {
                 k++;
                 value = frequencyArray[i + 5] / 256;
                 energyCtx.lineTo(middleWidth + k * frequencyDraw, energyHeight - middleHeight - (value * middleHeight));
             }
-            energyCtx.lineTo(energyWidth, middleHeight);
+            energyCtx.lineTo(middleWidth + k * frequencyDraw + frenquencyOffset, middleHeight);
             energyCtx.stroke();
 
             energyCtx.lineWidth = ~~(3 + Math.random() * 6);
@@ -251,20 +256,27 @@
             energyCtx.moveTo(0, middleHeight);
 
             k = 0;
+            drawing = -1;
+
             for (i = frenquencyLength - frenquencyOffset; i >= 0; i -= frenquencyOffset) {
                 k++;
-                value = frequencyArray[i + 5] / 256;
-                energyCtx.lineTo(k * frequencyDraw, energyHeight - middleHeight + (value * middleHeight));
+                if (drawing > -1) {
+                    value = frequencyArray[i + 5] / 256;
+                    energyCtx.lineTo(k * frequencyDraw, energyHeight - middleHeight + (value * middleHeight));
+                } else if (frequencyArray[i + 5] / 256 > 0.1) {
+                    drawing = i;
+                    energyCtx.moveTo(k * frequencyDraw, middleHeight);
+                }
             }
 
             k = 0;
-            for (i = 0; i < frenquencyLength - frenquencyOffset * 2; i += frenquencyOffset) {
+            for (i = 0; i < frenquencyLength - frenquencyOffset * 2 - (frenquencyLength - drawing); i += frenquencyOffset) {
                 k++;
                 value = frequencyArray[i + 5] / 256;
                 energyCtx.lineTo(middleWidth + k * frequencyDraw, energyHeight - middleHeight + (value * middleHeight));
             }
 
-            energyCtx.lineTo(energyWidth, middleHeight);
+            energyCtx.lineTo(middleWidth + k * frequencyDraw + frenquencyOffset, middleHeight);
             energyCtx.stroke();
 
         }
