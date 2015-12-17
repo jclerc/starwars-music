@@ -1,26 +1,23 @@
-/**************
-VOTE PAGE
-**************/
+/**
+ * Vote page
+ *
+ */
+
 .vote {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     color: white;
     background-color: black;
 
     h1 {
         margin-top: 100px;
-
         text-align: center;
         text-transform: uppercase;
-
         color: white;
         text-shadow: 0 1px 2px #1B1B1B;
-
         font-family: 'SerifGothic', serif;
         font-size: 70px;
     }
@@ -29,25 +26,19 @@ VOTE PAGE
         position: absolute;
         top: 50%;
         left: 50%;
-
         display: flex;
-
         width: 90px;
         height: 90px;
-
         transform: translate(-50%, -50%) rotate(45deg);
         text-align: center;
-
         border: 4px solid white;
         border-radius: 10%;
         background-color: rgba(0, 0, 0, 0.5);
         box-shadow: 0 2px 2px #1B1B1B;
         text-shadow: 0 1px 2px #1B1B1B;
-
         font-family: 'SerifGothic', sans-serif;
         font-size: 50px;
         line-height: 90px;
-
         align-items: center;
         justify-content: center;
 
@@ -59,9 +50,7 @@ VOTE PAGE
     .side {
         position: absolute;
         top: 0;
-
         overflow: hidden;
-
         width: 50%;
         height: 100%;
 
@@ -72,9 +61,7 @@ VOTE PAGE
             right: 0;
             bottom: 0;
             left: 0;
-
             transition: all .3s ease-in;
-
             opacity: .5;
             background-size: cover;
         }
@@ -82,10 +69,7 @@ VOTE PAGE
         .content {
             position: absolute;
             bottom: 10%;
-            // left: 10%;
-
             width: 80%;
-
             text-shadow: 0 1px 2px #1B1B1B;
 
             h3 {
@@ -99,23 +83,18 @@ VOTE PAGE
 
             .button-vote {
                 display: inline-block;
-
                 width: 250px;
                 height: 50px;
                 margin-top: 30px;
-
                 transition: all .3s;
                 text-transform: uppercase;
-
                 border: 2px solid white;
                 border-radius: 25px;
-
                 font-family: 'SerifGothic', serif;
                 font-size: 26px;
 
                 &:hover {
                     cursor: pointer;
-
                     color: black;
                     background-color: white;
                 }
@@ -125,7 +104,6 @@ VOTE PAGE
         &:hover {
             span.background {
                 transform: scale(1.02) translateZ(0);
-
                 opacity: 1;
             }
         }

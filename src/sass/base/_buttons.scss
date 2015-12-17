@@ -3,49 +3,50 @@
  *
  */
 
- button.go-select {
-     position: absolute;
-     top: 10px;
-     left: 50%;
-     transform: translateX(-50%);
-     z-index: 40;
+button.go-select {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
 
-     p {
+    &:hover {
+        cursor: pointer;
+    }
+
+    p {
         color: white;
         text-transform: uppercase;
         font-family: 'SerifGothic', serif;
-     }
+    }
 
-     .arrow {
-         padding-bottom: 20px;
-
-         .branch {
-             display: inline-block;
-             width: 30px;
-             height: 3px;
-             margin: -2px;
-             background: white;
-             border-radius: 1px;
-         }
-
-         .left {
-             transform: rotate(-20deg);
-             transform-origin: top right;
-         }
-
-         .right {
-             transform: rotate(20deg);
-             transform-origin: top left;
-         }
-     }
-
-     &:hover {
-         cursor: pointer;
-     }
- }
-
+    .arrow {
+        padding-bottom: 20px;
+        .branch {
+            display: inline-block;
+            width: 30px;
+            height: 3px;
+            margin: -2px;
+            background: white;
+            border-radius: 1px;
+        }
+        .left {
+            transform: rotate(-20deg);
+            transform-origin: top right;
+        }
+        .right {
+            transform: rotate(20deg);
+            transform-origin: top left;
+        }
+    }
+}
 
 button.go-vote {
+
+    &:hover {
+        cursor: pointer;
+    }
+
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -55,7 +56,6 @@ button.go-vote {
 
     .arrow {
         padding-bottom: 20px;
-
         .branch {
             display: inline-block;
             width: 30px;
@@ -64,26 +64,20 @@ button.go-vote {
             border-radius: 1px;
             background: white;
         }
-
         .left {
             transform: rotate(20deg);
             transform-origin: bottom right;
         }
-
         .right {
             transform: rotate(-20deg);
             transform-origin: bottom left;
         }
     }
-
+    
     p {
         font-family: 'SerifGothic', serif;
         padding-bottom: 10px;
         color: white;
         text-transform: uppercase;
-    }
-
-    &:hover {
-        cursor: pointer;
     }
 }

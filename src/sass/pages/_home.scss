@@ -1,18 +1,17 @@
-/* * */
+/**
+ * Home page
+ *
+ */
 
+.home {
 
-/**************
-    HOME
-**************/
-
-
-.home{
-    .splash{
+    .splash {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -70%);
-        .logo{
+
+        .logo {
             max-width: 100%;
         }
 
@@ -25,6 +24,7 @@
             color: white;
         }
     }
+
     .continue {
         position: absolute;
         left: 50%;
@@ -37,8 +37,10 @@
             font-size: 19px;
             color: white;
             margin-bottom: 20px;
-        font-family: 'RalewayLight', sans-serif;
+            font-family: 'RalewayLight', sans-serif;
+
         }
+
         button {
             width: 310px;
             height: 50px;

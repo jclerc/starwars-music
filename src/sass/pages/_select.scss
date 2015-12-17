@@ -1,24 +1,21 @@
-/**************
-EPISODE SELECTION
-**************/
+/**
+ * Episode selection
+ *
+ */
 
 .cards {
     width: 175%;
     height: 100%;
-
     transform: translateZ(0);
     text-align: center;
-
     color: white;
     text-shadow: 0px 1px 2px #1B1B1B;
 
     .card {
         float: left;
         overflow: hidden;
-
         width: 14.28%;
         height: 100%;
-
         transition: all .3s;
         transform: translateZ(0);
 
@@ -28,12 +25,9 @@ EPISODE SELECTION
             right: 0;
             bottom: 0;
             left: 0;
-
             display: block;
-
             transition: transform .3s;
             transform: translateZ(0);
-
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -43,16 +37,11 @@ EPISODE SELECTION
             position: absolute;
             top: 33%;
             left: 50%;
-
             display: flex;
             flex-direction: column;
-
             width: 100%;
-
             transform: translate(-50%, -50%);
-
             font-family: 'SerifGothic', serif;
-
             align-items: center;
 
             .title {
@@ -62,28 +51,21 @@ EPISODE SELECTION
 
             .number {
                 display: flex;
-
                 width: 60px;
                 height: 60px;
                 margin-bottom: 30px;
-
                 transition: all .3s;
                 transform: rotate(45deg);
-
                 border: 2px solid white;
                 border-radius: 20%;
                 box-shadow: 0px 1px 2px #1B1B1B;
-
                 align-items: center;
                 justify-content: center;
 
                 p {
                     padding: auto;
-
                     transform:  rotate(-45deg);
-
                     text-shadow: 0px 0px 2px #1B1B1B;
-
                     font-size: 30px;
                 }
             }
@@ -99,29 +81,26 @@ EPISODE SELECTION
             .number {
                 color: transparent;
                 background : white;
+
                 p {
                     color: black;
                     text-shadow: 0px 0px 0px white;
                 }
             }
 
-            span.background{
+            span.background {
                 transform: scale(1.02) translateZ(0);
             }
 
             .lock {
                 animation: pop .5s;
-
             }
-
         }
 
         .darken {
             width: 100%;
             height: 100%;
-
             transition: opacity .3s;
-
             opacity: .15;
             background-color: #1C1C1C;
         }
@@ -129,22 +108,18 @@ EPISODE SELECTION
         .lock {
             position: absolute;
             top:50%; left: 50%;
-
             width: 50px;
-
             transform: translate(-50%, -50%);
-
             opacity: .95;
-
         }
 
-        &:nth-child(1){
+        &:nth-child(1) {
             span.background {
                 background-image: url('../img/film-1.jpg')
             }
         }
 
-        &:nth-child(2){
+        &:nth-child(2) {
             span.background {
                 background-image: url('../img/film-2.jpg')
             }
@@ -198,6 +173,6 @@ EPISODE SELECTION
 }
 
 @keyframes pop {
-    20% { transform:  translate(-50%, -50%) scale(1.2) translateZ(0); }
-    100% { transform:  translate(-50%, -50%) scale(1) translateZ(0); }
+    20%  { transform: translate(-50%, -50%) scale(1.2) translateZ(0); }
+    100% { transform: translate(-50%, -50%) scale(1) translateZ(0); }
 }
