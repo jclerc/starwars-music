@@ -38,12 +38,12 @@
             color: white;
             margin-bottom: 20px;
             font-family: 'RalewayLight', sans-serif;
-
         }
 
-        button {
+        .begin {
+            display: inline-block;
             width: 310px;
-            height: 50px;
+            padding: 10px;
             border: 2px solid white;
             border-radius: 30px;
             color: white;

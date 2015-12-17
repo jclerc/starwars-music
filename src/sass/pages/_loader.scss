@@ -11,6 +11,11 @@
 
 .loader {
     z-index: 200;
+    text-align: center;
+
+    h1 {
+        display: none;
+    }
     
     .wrapper {
         display: flex;

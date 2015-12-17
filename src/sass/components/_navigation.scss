@@ -5,6 +5,11 @@
 
 .navigation {
     cursor: pointer;
+    text-decoration: none;
+}
+
+a.navigation {
+    display: inline-block;
 }
 
 .enter-up,

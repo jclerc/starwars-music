@@ -22,7 +22,9 @@
     // Bind navigation elements to animations
     var bindNavigation = function (element) {
         element.addEventListener('click', function (e) {
-            App.goto(this.getAttribute('data-target'), this.getAttribute('data-direction') === 'up');
+            if (this.getAttribute('data-target')) {
+                App.goto(this.getAttribute('data-target'), this.getAttribute('data-direction') === 'up');
+            }
             e.preventDefault();
         });
     };

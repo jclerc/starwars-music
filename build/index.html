@@ -26,15 +26,17 @@
 
 <body>
     <section data-page="loader" class="page loader visible">
-       <div class="wrapper">
-           <div class="lightsabers">
-               <span class="lightsaber"></span>
-               <span class="lightsaber"></span>
-               <span class="lightsaber"></span>
-               <span class="lightsaber"></span>
-           </div>
-       </div>
-   </section>
+        <div class="wrapper">
+            <h1>Loading..</h1>
+            <div class="lightsabers">
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+            </div>
+        </div>
+    </section>
+    
     <section data-page="home" class="page home">
         <canvas class="hyperspace"></canvas>
         <div class="splash">
@@ -43,7 +45,7 @@
         </div>
         <div class="continue">
             <p class="tip">Please plug your headphones for an optimal experience...</p>
-            <button type="button" class="begin">Begin</button>
+            <a href="#" class="navigation begin">Begin</a>
         </div>
     </section>
 
@@ -74,13 +76,13 @@
             <div class="card navigation" data-target="vote" data-direction="down">
                 <span class="background"></span>
                 <div class="darken"></div>
-                <button class="go-vote navigation" data-target="vote" data-direction="down">
+                <a href="#" class="go-vote navigation" data-target="vote" data-direction="down">
                     <p>CHOOSE THE NEXT SCENE !</p>
                     <div class="arrow">
                         <div class="left branch"></div>
                         <div class="right branch"></div>
                     </div>
-                </button>
+                </a>
                 <div class="content">
                     <div class="number">
                         <p>III</p>
@@ -160,13 +162,13 @@
                 <canvas></canvas>
             </div>
         </div>
-        <button class="go-select navigation" data-target="select" data-direction="up">
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
             <div class="arrow">
                 <div class="left branch"></div>
                 <div class="right branch"></div>
             </div>
             <p>SELECT ANOTHER EPISODE</p>
-        </button>
+        </a>
         <div class="title">
             <div class="scene-number">
                 <h3>Pod race scene</h3>
@@ -180,14 +182,15 @@
                     <br>By winning the race, his mother got freedom.</p>
             </div>
         </div>
-        <button class="go-vote navigation" data-target="episode-2" data-direction="down">
+        <a href="#" class="go-vote navigation" data-target="episode-2" data-direction="down">
             <p>Episode II</p>
             <div class="arrow">
                 <div class="left branch"></div>
                 <div class="right branch"></div>
             </div>
-        </button>
+        </a>
     </section>
+
     <section data-page="episode-2" class="page experiment episode-2">
         <div class="video-fullscreen">
             <video src="media/episode2.mp4" loop="loop" class="video" muted="muted"></video>
@@ -197,13 +200,13 @@
             <div class="light light-1 active"></div>
             <div class="light light-2"></div>
         </div>
-        <button class="go-select navigation" data-target="select" data-direction="up">
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
             <div class="arrow">
                 <div class="left branch"></div>
                 <div class="right branch"></div>
             </div>
             <p>SELECT ANOTHER EPISODE</p>
-        </button>
+        </a>
         <div class="title">
             <div class="scene-number">
                 <h3>Yoda vs Dooku</h3>
@@ -217,23 +220,23 @@
                     <br>and tried to kill Obi-Wan and Anakin.</p>
             </div>
         </div>
-        <button class="go-vote navigation" data-target="vote" data-direction="down">
+        <a href="#" class="go-vote navigation" data-target="vote" data-direction="down">
             <p>VOTE FOR THE NEXT EXPERIENCE !</p>
             <div class="arrow">
                 <div class="left branch"></div>
                 <div class="right branch"></div>
             </div>
-        </button>
+        </a>
     </section>
 
     <section data-page="vote" class="page vote">
-        <button class="go-select navigation" data-target="select" data-direction="up">
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
             <div class="arrow">
                 <div class="left branch"></div>
                 <div class="right branch"></div>
             </div>
             <p>SELECT ANOTHER EPISODE</p>
-        </button>
+        </a>
         <h1>What's Next?</h1>
         <div class="episode-number">
             <p>III</p>
@@ -243,7 +246,7 @@
             <div class="content">
                 <h3>Scène 6</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, aut. Voluptatum ullam excepturi accusamus libero, eius. Nesciunt corporis accusantium eveniet.</p>
-                <button type="button" class="button-vote">Je vote</button>
+                <a href="#" class="button-vote navigation">Je vote</a>
             </div>
         </div>
         <div class="right side">
@@ -251,7 +254,7 @@
             <div class="content">
                 <h3>Scène 16</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ut tenetur tempora blanditiis ipsa ducimus! Magni!</p>
-                <button type="button" class="button-vote">Je vote</button>
+                <a href="#" class="button-vote navigation">Je vote</a>
             </div>
         </div>
     </section>

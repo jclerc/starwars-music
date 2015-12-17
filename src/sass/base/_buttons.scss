@@ -3,12 +3,13 @@
  *
  */
 
-button.go-select {
+.go-select {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 40;
+    text-align: center;
 
     &:hover {
         cursor: pointer;
@@ -41,12 +42,8 @@ button.go-select {
     }
 }
 
-button.go-vote {
-
-    &:hover {
-        cursor: pointer;
-    }
-
+.go-vote {
+    text-align: center;
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -54,8 +51,13 @@ button.go-vote {
     transform: translateX(-50%);
     z-index: 40;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     .arrow {
         padding-bottom: 20px;
+
         .branch {
             display: inline-block;
             width: 30px;
