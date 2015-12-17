@@ -14,6 +14,7 @@
         }
 
         window.addEventListener('load', function () {
+            App.goto('home', false);
         });
 
     };
