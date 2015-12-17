@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <section class="page home visible">
+    <section data-page="home" class="page home visible">
         <canvas class="hyperspace"></canvas>
         <div class="splash">
             <img src="img/star-wars-logo.svg" alt="Star Wars" class="logo">
@@ -37,7 +37,7 @@
         </div>
     </section>
 
-    <section class="page select">
+    <section data-page="select" class="page select">
         <div class="cards">
             <div class="card navigation" data-target="episode-1" data-direction="down">
                 <span class="background"></span>
@@ -122,8 +122,7 @@
             </div>
         </div>
     </section>
-
-    <section class="page episode-1">
+    <section data-page="episode-1" class="page episode-1">
         <button class="go-select">
             <div class="arrow">
                 <div class="left branch"></div>
@@ -156,8 +155,22 @@
     <section class="page episode-2">-
         <h1>Episode II</h1>
     </section>
-
-    <section class="page vote">
+        <div class="starship">
+            <div class="module module-left">
+                <img src="img/starship-left.png" alt="">
+            </div>
+            <div class="module module-right">
+                <img src="img/starship-right.png" alt="">
+            </div>
+            <div class="drawing">
+                <canvas></canvas>
+            </div>
+        </div>
+    </section>
+    <section data-page="episode-2" class="page episode-2">
+        <h1>Episode II</h1>
+    </section>
+    <section data-page="vote" class="page vote">
         <h1>What's Next?</h1>
         <div class="episode-number">
             <p>III</p>
