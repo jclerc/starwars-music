@@ -9,43 +9,7 @@ section.experiment {
     height: 100%;
     background: #C74D3A;
 
-    button.go-select {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
 
-        p {
-            color: white;
-        }
-
-        .arrow {
-            padding-bottom: 20px;
-
-            .branch {
-                display: inline-block;
-                width: 30px;
-                height: 3px;
-                margin: -3px;
-                background: white;
-                border-radius: 1px;
-            }
-
-            .left {
-                transform: rotate(-20deg);
-                transform-origin: top right;
-            }
-
-            .right {
-                transform: rotate(20deg);
-                transform-origin: top left;
-            }
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
 
     button.go-vote {
         position: absolute;
