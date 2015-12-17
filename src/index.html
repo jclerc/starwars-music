@@ -25,15 +25,7 @@
 </head>
 
 <body>
-    <section data-page="loader" class="page loader visible">
-        <div class="lightsabers">
-            <span class="lightsaber"></span>
-            <span class="lightsaber"></span>
-            <span class="lightsaber"></span>
-            <span class="lightsaber"></span>
-        </div>
-    </section>
-    <section data-page="home"  class="page home ">
+    <section data-page="home" class="page home visible">
         <canvas class="hyperspace"></canvas>
         <div class="splash">
             <img src="img/star-wars-logo.svg" alt="Star Wars" class="logo">
@@ -139,6 +131,14 @@
     </section>
 
     <section data-page="episode-1" class="page experiment episode-1">
+        <div class="video-fullscreen">
+            <video src="media/episode1.mp4" loop="loop" class="video" muted="muted"></video>
+        </div>
+        <div class="mask"></div>
+        <div class="ambient">
+            <div class="light light-1 active"></div>
+            <div class="light light-2"></div>
+        </div>
         <div class="starship">
             <div class="module module-left">
                 <img src="img/starship-left.png" alt="">
@@ -159,15 +159,15 @@
         </button>
         <div class="title">
             <div class="scene-number">
-                <h3>Scène 37</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h3>Pod race scene</h3>
+                <p>Anakin won the race with his podracer.</p>
             </div>
             <p class="number">I</p>
             <div class="episode-number">
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit.
-                    <br> Lorem ipsum dolor.</p>
+                <p>Although he was a kid, he shows to everyone he was the chosen one.
+                    <br>By winning the race, his mother got freedom.</p>
             </div>
         </div>
         <button class="go-vote navigation" data-target="episode-2" data-direction="down">
@@ -179,6 +179,14 @@
         </button>
     </section>
     <section data-page="episode-2" class="page experiment episode-2">
+        <div class="video-fullscreen">
+            <video src="media/episode2.mp4" loop="loop" class="video" muted="muted"></video>
+        </div>
+        <div class="mask"></div>
+        <div class="ambient">
+            <div class="light light-1 active"></div>
+            <div class="light light-2"></div>
+        </div>
         <button class="go-select navigation" data-target="select" data-direction="up">
             <div class="arrow">
                 <div class="left branch"></div>
@@ -188,15 +196,15 @@
         </button>
         <div class="title">
             <div class="scene-number">
-                <h3>Scène 12</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h3>Yoda vs Dooku</h3>
+                <p>Yoda fight again his old apprentice Count Dooku.</p>
             </div>
             <p class="number">II</p>
             <div class="episode-number">
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit.
-                    <br> Lorem ipsum dolor.</p>
+                <p>The Count Dooku just began the black lord of the Sith,
+                    <br>and tried to kill Obi-Wan and Anakin.</p>
             </div>
         </div>
         <button class="go-vote navigation" data-target="vote" data-direction="down">

@@ -1,0 +1,75 @@
+/**************
+AMBIENT LIGHT
+**************/
+
+.video-fullscreen {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .video {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        min-width: 100%; 
+        min-height: 100%; 
+        width: auto; 
+        height: auto;
+        z-index: -1000; 
+        overflow: hidden;
+    }
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: radial-gradient(ellipse at center -600px, transparent 33%, rgba(0, 0, 0, 1) 100%);
+}
+
+.ambient {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.82;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s, z-index 0s;
+    z-index: 0;
+
+    .light {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.0);
+        z-index: 5;
+
+        &.active {
+            opacity: 1;
+            z-index: 10;
+            animation: appear 1s linear;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            background: radial-gradient(ellipse at center -600px, transparent 33%, rgba(0, 0, 0, 0.5) 100%);
+            opacity: 0;
+        }
+
+    }
+}

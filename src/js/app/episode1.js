@@ -4,6 +4,8 @@
     var episodeIsPlaying = false;
 
     var canvas = $('.episode-1 .drawing canvas');
+    var video = $('.episode-1 .video');
+    var ambientLight = new AmbientLight(video, $('.episode-1 .ambient'));
 
     if (!canvas || !canvas.getContext) return;
 
@@ -13,7 +15,7 @@
         width = canvas.width,
         height = canvas.height;
 
-    var frequency = 100,
+    var frequency = 30,
         amplitudeCount = 30,
         frequencyCount = 40;
 
@@ -29,7 +31,7 @@
     var sampleSize = 1024;
     var amplitudeArray;
     var frequencyArray;
-    var audioUrl = 'audio/episode1.mp3';
+    var audioUrl = 'media/episode1.mp3';
     var middleWidth = ~~(width / 2);
     var middleHeight = ~~(height / 2);
     var lastDraw = 0;
@@ -144,25 +146,30 @@
             for (i = frenquencyLength - frenquencyOffset; i >= 0; i -= frenquencyOffset) {
                 k++;
                 value = frequencyArray[i + 5] / 256;
-                context.lineTo(k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.sin(sinOffset + k / 5));
+                // context.lineTo(k * frequencyDraw, height - middleHeight - (value * middleHeight));
+                // context.lineTo(k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.sin(sinOffset + k / 5));
+                context.lineTo(k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.sin(sinOffset + k / 5) * averageVolume);
             }
 
             k = 0;
             for (i = 0; i < frenquencyLength - frenquencyOffset * 2; i += frenquencyOffset) {
                 k++;
                 value = frequencyArray[i + 5] / 256;
-                context.lineTo(middleWidth + k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.cos(sinOffset + k / 5));
+                // context.lineTo(middleWidth + k * frequencyDraw, height - middleHeight - (value * middleHeight));
+                // context.lineTo(middleWidth + k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.cos(sinOffset + k / 5));
+                context.lineTo(middleWidth + k * frequencyDraw, height - middleHeight - (value * middleHeight) * Math.cos(sinOffset + k / 5) * averageVolume);
             }
 
             context.lineTo(width, middleHeight);
             context.stroke();
 
-
-            context.lineWidth = ~~(2 + Math.random() * 4);
+            // AMPLITUDE VARIABLE
 
             var amplitudeLength = amplitudeArray.length;
             var amplitudeOffset = ~~(amplitudeLength / amplitudeCount);
             var amplitudeDraw = ~~(width / amplitudeCount);
+
+            context.lineWidth = ~~(2 + Math.random() * 4);
 
             context.beginPath();
             context.moveTo(0, middleHeight);
@@ -177,16 +184,16 @@
             context.stroke();
 
 
-            // context.beginPath();
-            // context.moveTo(0, middleHeight);
-            // k = 0;
-            // for (i = amplitudeLength - amplitudeOffset; i >= amplitudeOffset; i -= amplitudeOffset) {
-            //     k++;
-            //     value = height - (height * amplitudeArray[i] / 256) - 1;
-            //     context.lineTo(k * amplitudeDraw, value);
-            // }
-            // context.lineTo(width, middleHeight);
-            // context.stroke();
+            context.beginPath();
+            context.moveTo(0, middleHeight);
+            k = 0;
+            for (i = amplitudeLength - amplitudeOffset; i >= amplitudeOffset; i -= amplitudeOffset) {
+                k++;
+                value = height - (height * amplitudeArray[i] / 256) - 1;
+                context.lineTo(k * amplitudeDraw, value);
+            }
+            context.lineTo(width, middleHeight);
+            context.stroke();
 
             // context.beginPath();
             // context.moveTo(0, middleHeight);
@@ -211,10 +218,13 @@
     }
 
 
-    App.bind('episode-1', 'loaded', function (e) {
+    App.bind('episode-1', 'loaded', function () {
         episodeIsPlaying = true;
 
         setupAudioNodes();
+        video.currentTime = 0;
+        video.play();
+        ambientLight.play();
 
         // setup the event handler that is triggered every time enough samples have been collected
         // trigger the audio analysis and draw the results
@@ -246,6 +256,7 @@
 
     App.bind('episode-1', 'unloading', function () {
         clearInterval(energyInterval);
+        ambientLight.stop();
         episodeIsPlaying = false;
         sourceNode.stop(0);
         audioPlaying = false;
@@ -253,6 +264,8 @@
 
     App.bind('episode-1', 'unloaded', function () {
         clearCanvas();
+        video.currentTime = 0;
+        video.pause();
     });
 
 })();

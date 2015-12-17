@@ -1,25 +1,18 @@
 /**************
 EXPERIMENT
 **************/
+
 section.experiment {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #C74D3A;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(ellipse at center -600px, transparent 33%, rgba(0, 0, 0, 0.3) 100%);
-    }
+    background: black;
 
     .title {
+        z-index: 40;
+        position: relative;
         display: flex;
         align-items: baseline;
         justify-content: center;
@@ -28,7 +21,7 @@ section.experiment {
         color: white;
 
         .scene-number {
-            transform: translateY(6px);
+            transform: translateY(-25px);
             display: inline-block;
             text-align: right;
             position: relative;
@@ -53,12 +46,13 @@ section.experiment {
 
         p.number {
             position: absolute;
-            top: 167px;
+            top: 96px;
             left: 50%;
             transform: translate(-50%, -50%);
             font-family: 'SerifGothic', serif;
             font-size: 50px;
         }
+
         .episode-number {
             display: inline-block;
             text-align: center;
@@ -75,7 +69,7 @@ section.experiment {
         }
 
         .description {
-            transform: translateY(6px);
+            transform: translateY(-25px);
             display: inline-block;
             position: relative;
             width: 40%;

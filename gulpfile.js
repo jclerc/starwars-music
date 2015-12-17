@@ -70,11 +70,11 @@ gulp.task('fonts', function(){
         .pipe(browserSync.stream());
 });
 
-// audio
-gulp.task('audio', function(){
-    gulp.src('src/audio/*')
+// media
+gulp.task('media', function(){
+    gulp.src('src/media/*')
         .pipe(plumber())
-        .pipe(gulp.dest('build/audio/'))
+        .pipe(gulp.dest('build/media/'))
         .pipe(browserSync.stream());
 });
 
@@ -91,7 +91,7 @@ gulp.task('watch', function(){
     gulp.watch('src/img/**/*', ['image']);
     gulp.watch('src/js/**/*.js', ['script']);
     gulp.watch('src/fonts/**/*', ['fonts']);
-    gulp.watch('src/audio/**/*', ['audio']);
+    gulp.watch('src/media/**/*', ['media']);
     // might want to change to scss
     gulp.watch('src/sass/**/*', ['style']);
     gulp.watch('*.html').on('change', browserSync.reload);
@@ -99,4 +99,4 @@ gulp.task('watch', function(){
 
 //trigger by default each time you run gulp an array of tasks
 //order sensitive?
-gulp.task('default', ['script', 'fonts', 'audio', 'style', 'image', 'html', 'watch']);
+gulp.task('default', ['script', 'fonts', 'media', 'style', 'image', 'html', 'watch']);
