@@ -3,9 +3,13 @@
  *
  */
 
-html, body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+
+html {
+    font-family: map-get($fonts_ettings, font-family);
+}
+body {
+    font-size: map-get($fonts_settings, font-size);
+    line-height: map-get($fonts_settings, line-height);
 }
 
 @font-face {
