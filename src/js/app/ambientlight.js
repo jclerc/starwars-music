@@ -2,8 +2,8 @@
 function AmbientLight(video, ambient) {
     this.video = video;
     this.ambient = ambient;
-    this.light1 = $('.light-1', ambient);
-    this.light2 = $('.light-2', ambient);
+    this.light1 = ambient.querySelector('.light-1');
+    this.light2 = ambient.querySelector('.light-2');
     this.interval = -1;
 }
 
@@ -12,7 +12,7 @@ AmbientLight.prototype.play = function() {
     var self = this;
 
     this.interval = setInterval(function () {
-    
+
         var applyTo = self.light1.classList.contains('active') ? self.light2 : self.light1;
 
         // We show a 1x1 canvas in 100% width/height
