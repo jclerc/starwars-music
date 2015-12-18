@@ -292,7 +292,7 @@
     } catch (ex) {
         console.warn('Web Audio API is not supported in this browser');
     }
-
+    //Create new particle
     for (var i = 0; i < 100; i++) {
         particles.push(create_particle());
     }
