@@ -14,9 +14,16 @@
     text-align: center;
 
     h1 {
-        display: none;
+        display: block;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 430%);
+        font-family: serifGothic;
+        font-size: 16px;
     }
-    
+
     .wrapper {
         display: flex;
         width: 100%;
@@ -47,12 +54,12 @@
                 box-shadow: -1px -1px 15px rgb(0, 255, 255) , 1px 1px 15px rgb(0, 255, 255);
                 animation: grow .5s ease-out .2s infinite alternate;
             }
- 
+
             span.lightsaber:nth-child(3) {
                 box-shadow: -1px -1px 15px rgb(0, 255, 56) , 1px 1px 15px rgb(0, 255, 56);
                 animation: grow .5s ease-out .4s infinite alternate;
             }
- 
+
             span.lightsaber:nth-child(4) {
                 box-shadow: -1px -1px 15px violet , 1px 1px 15px violet;
                 animation: grow .5s ease-out .6s infinite alternate;
