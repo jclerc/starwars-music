@@ -111,7 +111,7 @@
             },
             renderFrame: renderFrame
         };
-        
+
     })();
 
     var setupAudioNodes = function () {
@@ -162,14 +162,14 @@
     var getAverageVolume = function (array) {
         var values = 0;
         var average;
- 
+
         var length = array.length;
- 
+
         // get all the frequency amplitudes
         for (var i = 0; i < length; i++) {
             values += array[i];
         }
- 
+
         average = values / length;
         return average;
     };
@@ -230,7 +230,7 @@
             energyCtx.lineWidth = ~~(3 + Math.random() * 6);
             energyCtx.beginPath();
 
-            k = 0;            
+            k = 0;
             for (i = frenquencyLength - frenquencyOffset; i >= 0; i -= frenquencyOffset) {
                 k++;
                 if (drawing > -1) {
@@ -281,7 +281,7 @@
 
         }
     };
-
+    // clear canvas
     var clearCanvas = function () {
         context.clearRect(0, 0, width, height);
         energyCtx.clearRect(0, 0, energyWidth, energyHeight);
