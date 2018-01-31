@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section data-page="loader" class="page loader visible">
+        <h1>LOADING...</h1>
+        <div class="wrapper">
+            <div class="lightsabers">
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+                <span class="lightsaber"></span>
+            </div>
+        </div>
+    </section>
+
+    <section data-page="home" class="page home">
+        <canvas class="hyperspace"></canvas>
+        <div class="splash">
+            <img src="img/star-wars-logo.svg" alt="Star Wars" class="logo">
+            <h2 class="title">The Audio Experience</h2>
+        </div>
+        <div class="continue">
+            <p class="tip">Please plug your headphones for an optimal experience...</p>
+            <a href="#" class="navigation begin">Begin</a>
+        </div>
+    </section>
+
+    <section data-page="select" class="page select">
+        <div class="cards">
+            <div class="card navigation" data-target="episode-1" data-direction="down">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>I</p>
+                    </div>
+                    <h3 class="title">Episode I :
+                        <br> The Phantom Menace</h3>
+                </div>
+            </div>
+            <div class="card navigation" data-target="episode-2" data-direction="down">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>II</p>
+                    </div>
+                    <h3 class="title">Episode II :
+                        <br> Attack of the Clones</h3>
+                </div>
+            </div>
+            <div class="card navigation" data-target="vote" data-direction="down">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <a href="#" class="go-vote navigation" data-target="vote" data-direction="down">
+                    <p>CHOOSE THE NEXT SCENE !</p>
+                    <div class="arrow">
+                        <div class="left branch"></div>
+                        <div class="right branch"></div>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="number">
+                        <p>III</p>
+                    </div>
+                    <h3 class="title">Episode III :
+                        <br> Revenge of the Sith</h3>
+                </div>
+                <img src="img/lock.svg" class="lock" alt="This Episode is unavailable for the moment" />
+            </div>
+            <div class="card">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>IV</p>
+                    </div>
+                    <h3 class="title">Episode IV :
+                        <br> A New Hope</h3>
+                </div>
+                <img src="img/lock.svg" class="lock" alt="This Episode is unavailable for the moment" />
+            </div>
+            <div class="card">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>V</p>
+                    </div>
+                    <h3 class="title">Episode V :
+                        <br> The Empire Strikes Back</h3>
+                </div>
+                <img src="img/lock.svg" class="lock" alt="This Episode is unavailable for the moment" />
+            </div>
+            <div class="card">
+                <span class="background"></span>
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>VI</p>
+                    </div>
+                    <h3 class="title">Episode VI :
+                        <br> Return of the Jedi</h3>
+                </div>
+                <img src="img/lock.svg" class="lock" alt="This Episode is unavailable for the moment" />
+            </div>
+            <div class="card">
+                <div class="darken"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>VII</p>
+                    </div>
+                    <h3 class="title">Episode VII :
+                        <br> The Force Awakens</h3>
+                </div>
+                <img src="img/lock.svg" class="lock" alt="This Episode is unavailable for the moment" />
+            </div>
+        </div>
+    </section>
+
+    <section data-page="episode-1" class="page experiment episode-1">
+        <div class="video-fullscreen">
+            <video src="media/episode1.mp4" loop="loop" class="video" muted="muted"></video>
+        </div>
+        <div class="mask"></div>
+        <div class="ambient">
+            <div class="light light-1 active"></div>
+            <div class="light light-2"></div>
+        </div>
+        <div class="starship">
+            <div class="module module-left">
+                <img src="img/starship-left.png" alt="">
+            </div>
+            <div class="module module-right">
+                <img src="img/starship-right.png" alt="">
+            </div>
+            <div class="drawing">
+                <canvas></canvas>
+            </div>
+        </div>
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
+            <div class="arrow">
+                <div class="left branch"></div>
+                <div class="right branch"></div>
+            </div>
+            <p>SELECT ANOTHER EPISODE</p>
+        </a>
+        <div class="title">
+            <div class="scene-number">
+                <h3>Pod race scene</h3>
+                <p>Anakin won the race with his podracer.</p>
+            </div>
+            <p class="number">I</p>
+            <div class="episode-number">
+            </div>
+            <div class="description">
+                <p>Although he was a kid, he shows to everyone he was the chosen one.
+                    <br>By winning the race, his mother got freedom.</p>
+            </div>
+        </div>
+        <a href="#" class="go-vote navigation" data-target="episode-2" data-direction="down">
+            <p>Episode II</p>
+            <div class="arrow">
+                <div class="left branch"></div>
+                <div class="right branch"></div>
+            </div>
+        </a>
+    </section>
+
+    <section data-page="episode-2" class="page experiment episode-2">
+        <div class="video-fullscreen">
+            <video src="media/episode2.mp4" loop="loop" class="video" muted="muted"></video>
+        </div>
+        <div class="mask"></div>
+        <div class="ambient">
+            <div class="light light-1 active"></div>
+            <div class="light light-2"></div>
+        </div>
+
+        <div class="container_energy">
+            <div class="drawing">
+                <canvas></canvas>
+            </div>
+
+            <div class="left"><img class="left-hand" src="img/maing.png" alt=""></div>
+
+            <div class="middle">
+                <canvas class="canvas"></canvas>
+                <div class="energy_ball" id="ball">
+                    <div id="circles" class="area"></div>
+                    <div class="atome">
+                        <div class="atome-wrap">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right"><img class="right-hand" src="img/mainr.png" alt=""></div>
+        </div>
+
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
+            <div class="arrow">
+                <div class="left branch"></div>
+                <div class="right branch"></div>
+            </div>
+            <p>SELECT ANOTHER EPISODE</p>
+        </a>
+        <div class="title">
+            <div class="scene-number">
+                <h3>Yoda vs Dooku</h3>
+                <p>Yoda fight again his old apprentice Count Dooku.</p>
+            </div>
+            <p class="number">II</p>
+            <div class="episode-number">
+            </div>
+            <div class="description">
+                <p>The Count Dooku just began the black lord of the Sith,
+                    <br>and tried to kill Obi-Wan and Anakin.</p>
+            </div>
+        </div>
+        <a href="#" class="go-vote navigation" data-target="vote" data-direction="down">
+            <p>VOTE FOR THE NEXT EXPERIENCE !</p>
+            <div class="arrow">
+                <div class="left branch"></div>
+                <div class="right branch"></div>
+            </div>
+        </a>
+    </section>
+
+    <section data-page="vote" class="page vote">
+        <a href="#" class="go-select navigation" data-target="select" data-direction="up">
+            <div class="arrow">
+                <div class="left branch"></div>
+                <div class="right branch"></div>
+            </div>
+            <p>SELECT ANOTHER EPISODE</p>
+        </a>
+        <h1>What's Next?</h1>
+        <div class="episode-number">
+            <p>III</p>
+        </div>
+        <div class="left side">
+            <span class="background"></span>
+            <div class="content">
+                <h3>Scene 20</h3>
+                <p>Final Battle : Anakin vs Obiwan</p>
+                <a href="#" class="button-vote navigation">VOTE</a>
+            </div>
+        </div>
+        <div class="right side">
+            <span class="background"></span>
+            <div class="content">
+                <h3>Scene 6</h3>
+                <p>Anakin talks to Padme about the Jedi plan to take control of the Republic.</p>
+                <a href="#" class="button-vote navigation">VOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
