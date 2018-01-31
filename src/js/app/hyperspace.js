@@ -15,7 +15,7 @@
         var home = $('.page.home'),
             select = $('.page.select');
 
-        // select.addEventListener('animationend', function begin(e) { 
+        // select.addEventListener('animationend', function begin(e) {
         //     select.removeEventListener('animationend', begin);
         // });
 
@@ -83,7 +83,7 @@
                         context.lineWidth = s.size;
                         context.shadowBlur = 5;
                         context.lineCap = 'round';
-                        context.shadowColor = "#555";
+                        context.shadowColor = '#555';
                         context.beginPath();
                         context.moveTo(s.x, s.y);
                         context.lineTo(s.x + 0.1 + s.length * s.xs * GLOBAL_SPEED, s.y + s.length * s.ys * GLOBAL_SPEED);
